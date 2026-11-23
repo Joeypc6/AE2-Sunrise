@@ -1,0 +1,157 @@
+{
+  "id": "ae2:item_transformation",
+  "title": "ae2.rei_jei_integration.transform_category",
+  "icon": "minecraft:water_bucket",
+  "catalysts": [
+    "minecraft:water_bucket"
+  ],
+  "recipes": [
+    {
+      "ingredients": [
+        "ae2:charged_certus_quartz_crystal",
+        "ae2:certus_quartz_dust"
+      ],
+      "result": {
+        "id": "ae2:certus_quartz_crystal",
+        "count": 2
+      },
+      "via": "minecraft:water_bucket",
+      "note": "ae2.rei_jei_integration.submerge_in",
+      "water": "block.minecraft.water"
+    },
+    {
+      "ingredients": [
+        "ae2:charged_certus_quartz_crystal",
+        "ae2:damaged_budding_quartz"
+      ],
+      "result": {
+        "id": "ae2:chipped_budding_quartz"
+      },
+      "via": "minecraft:water_bucket",
+      "note": "ae2.rei_jei_integration.submerge_in",
+      "water": "block.minecraft.water"
+    },
+    {
+      "ingredients": [
+        "ae2:charged_certus_quartz_crystal",
+        "ae2:quartz_block"
+      ],
+      "result": {
+        "id": "ae2:damaged_budding_quartz"
+      },
+      "via": "minecraft:water_bucket",
+      "note": "ae2.rei_jei_integration.submerge_in",
+      "water": "block.minecraft.water"
+    },
+    {
+      "ingredients": [
+        "ae2:singularity",
+        "#c:ender_pearl_dusts"
+      ],
+      "result": {
+        "id": "ae2:quantum_entangled_singularity",
+        "count": 2
+      },
+      "via": "minecraft:tnt",
+      "note": "ae2.rei_jei_integration.explosion",
+      "water": ""
+    },
+    {
+      "ingredients": [
+        "ae2:singularity",
+        "#c:ender_pearls"
+      ],
+      "result": {
+        "id": "ae2:quantum_entangled_singularity",
+        "count": 2
+      },
+      "via": "minecraft:tnt",
+      "note": "ae2.rei_jei_integration.explosion",
+      "water": ""
+    },
+    {
+      "ingredients": [
+        "ae2:charged_certus_quartz_crystal",
+        "ae2:chipped_budding_quartz"
+      ],
+      "result": {
+        "id": "ae2:flawed_budding_quartz"
+      },
+      "via": "minecraft:water_bucket",
+      "note": "ae2.rei_jei_integration.submerge_in",
+      "water": "block.minecraft.water"
+    },
+    {
+      "ingredients": [
+        "ae2:charged_certus_quartz_crystal",
+        "ae2:fluix_dust"
+      ],
+      "result": {
+        "id": "ae2:fluix_crystal"
+      },
+      "via": "minecraft:water_bucket",
+      "note": "ae2.rei_jei_integration.submerge_in",
+      "water": "block.minecraft.water"
+    },
+    {
+      "ingredients": [
+        "ae2:charged_certus_quartz_crystal",
+        "minecraft:redstone",
+        "minecraft:quartz"
+      ],
+      "result": {
+        "id": "ae2:fluix_crystal",
+        "count": 2
+      },
+      "via": "minecraft:water_bucket",
+      "note": "ae2.rei_jei_integration.submerge_in",
+      "water": "block.minecraft.water"
+    }
+  ],
+  "size": [
+    130,
+    64
+  ],
+  "arrow": [
+    30,
+    23
+  ],
+  "slots": [
+    {
+      "x": 6,
+      "y": 4,
+      "role": "input",
+      "path": "ingredients",
+      "columns": 1,
+      "step": 18,
+      "max": 3
+    },
+    {
+      "x": 56,
+      "y": 23,
+      "role": "other",
+      "path": "via"
+    },
+    {
+      "x": 104,
+      "y": 23,
+      "role": "output",
+      "path": "result"
+    }
+  ],
+  "texts": [
+    {
+      "x": 34,
+      "y": 46,
+      "text": "%s %s",
+      "args": [
+        "note",
+        "water"
+      ],
+      "tr_args": [
+        0,
+        1
+      ]
+    }
+  ]
+}

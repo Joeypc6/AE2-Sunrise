@@ -1,0 +1,128 @@
+{
+  "textures": {
+    "base": "ae2:block/part/cable/dense_smart/lime",
+    "particle": "ae2:block/part/cable/dense_smart/lime",
+    "channels": "ae2:block/hz_cable/dense_smart_lime_ch0"
+  },
+  "elements": [
+    {
+      "from": [
+        4,
+        4,
+        0
+      ],
+      "to": [
+        12,
+        12,
+        5
+      ],
+      "faces": {
+        "down": {
+          "texture": "#base",
+          "uv": [
+            4,
+            0,
+            12,
+            5
+          ]
+        },
+        "up": {
+          "texture": "#base",
+          "uv": [
+            4,
+            0,
+            12,
+            5
+          ]
+        },
+        "south": {
+          "texture": "#base",
+          "uv": [
+            4,
+            4,
+            12,
+            12
+          ]
+        },
+        "west": {
+          "texture": "#base",
+          "uv": [
+            0,
+            4,
+            5,
+            12
+          ]
+        },
+        "east": {
+          "texture": "#base",
+          "uv": [
+            11,
+            4,
+            16,
+            12
+          ]
+        }
+      }
+    },
+    {
+      "from": [
+        3.99,
+        3.99,
+        -0.01
+      ],
+      "to": [
+        12.01,
+        12.01,
+        5.01
+      ],
+      "faces": {
+        "down": {
+          "texture": "#channels",
+          "uv": [
+            4,
+            0,
+            12,
+            5
+          ]
+        },
+        "up": {
+          "texture": "#channels",
+          "uv": [
+            4,
+            0,
+            12,
+            5
+          ]
+        },
+        "south": {
+          "texture": "#channels",
+          "uv": [
+            4,
+            4,
+            12,
+            12
+          ]
+        },
+        "west": {
+          "texture": "#channels",
+          "uv": [
+            0,
+            4,
+            5,
+            12
+          ]
+        },
+        "east": {
+          "texture": "#channels",
+          "uv": [
+            11,
+            4,
+            16,
+            12
+          ]
+        }
+      },
+      "light_emission": 15
+    }
+  ]
+}

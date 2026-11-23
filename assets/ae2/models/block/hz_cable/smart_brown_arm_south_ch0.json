@@ -1,0 +1,128 @@
+{
+  "textures": {
+    "base": "ae2:block/part/cable/smart/brown",
+    "particle": "ae2:block/part/cable/smart/brown",
+    "channels": "ae2:block/hz_cable/smart_brown_ch0"
+  },
+  "elements": [
+    {
+      "from": [
+        6,
+        6,
+        11
+      ],
+      "to": [
+        10,
+        10,
+        16
+      ],
+      "faces": {
+        "down": {
+          "texture": "#base",
+          "uv": [
+            6,
+            11,
+            10,
+            16
+          ]
+        },
+        "up": {
+          "texture": "#base",
+          "uv": [
+            6,
+            11,
+            10,
+            16
+          ]
+        },
+        "north": {
+          "texture": "#base",
+          "uv": [
+            10,
+            6,
+            6,
+            10
+          ]
+        },
+        "west": {
+          "texture": "#base",
+          "uv": [
+            11,
+            6,
+            16,
+            10
+          ]
+        },
+        "east": {
+          "texture": "#base",
+          "uv": [
+            0,
+            6,
+            5,
+            10
+          ]
+        }
+      }
+    },
+    {
+      "from": [
+        5.99,
+        5.99,
+        10.99
+      ],
+      "to": [
+        10.01,
+        10.01,
+        16.01
+      ],
+      "faces": {
+        "down": {
+          "texture": "#channels",
+          "uv": [
+            6,
+            11,
+            10,
+            16
+          ]
+        },
+        "up": {
+          "texture": "#channels",
+          "uv": [
+            6,
+            11,
+            10,
+            16
+          ]
+        },
+        "north": {
+          "texture": "#channels",
+          "uv": [
+            10,
+            6,
+            6,
+            10
+          ]
+        },
+        "west": {
+          "texture": "#channels",
+          "uv": [
+            11,
+            6,
+            16,
+            10
+          ]
+        },
+        "east": {
+          "texture": "#channels",
+          "uv": [
+            0,
+            6,
+            5,
+            10
+          ]
+        }
+      },
+      "light_emission": 15
+    }
+  ]
+}

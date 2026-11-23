@@ -1,0 +1,128 @@
+{
+  "textures": {
+    "base": "ae2:block/part/cable/smart/orange",
+    "particle": "ae2:block/part/cable/smart/orange",
+    "channels": "ae2:block/hz_cable/smart_orange_ch0"
+  },
+  "elements": [
+    {
+      "from": [
+        6,
+        11,
+        6
+      ],
+      "to": [
+        10,
+        16,
+        10
+      ],
+      "faces": {
+        "down": {
+          "texture": "#base",
+          "uv": [
+            6,
+            10,
+            10,
+            6
+          ]
+        },
+        "north": {
+          "texture": "#base",
+          "uv": [
+            10,
+            0,
+            6,
+            5
+          ]
+        },
+        "south": {
+          "texture": "#base",
+          "uv": [
+            6,
+            0,
+            10,
+            5
+          ]
+        },
+        "west": {
+          "texture": "#base",
+          "uv": [
+            6,
+            0,
+            10,
+            5
+          ]
+        },
+        "east": {
+          "texture": "#base",
+          "uv": [
+            10,
+            0,
+            6,
+            5
+          ]
+        }
+      }
+    },
+    {
+      "from": [
+        5.99,
+        10.99,
+        5.99
+      ],
+      "to": [
+        10.01,
+        16.01,
+        10.01
+      ],
+      "faces": {
+        "down": {
+          "texture": "#channels",
+          "uv": [
+            6,
+            10,
+            10,
+            6
+          ]
+        },
+        "north": {
+          "texture": "#channels",
+          "uv": [
+            10,
+            0,
+            6,
+            5
+          ]
+        },
+        "south": {
+          "texture": "#channels",
+          "uv": [
+            6,
+            0,
+            10,
+            5
+          ]
+        },
+        "west": {
+          "texture": "#channels",
+          "uv": [
+            6,
+            0,
+            10,
+            5
+          ]
+        },
+        "east": {
+          "texture": "#channels",
+          "uv": [
+            10,
+            0,
+            6,
+            5
+          ]
+        }
+      },
+      "light_emission": 15
+    }
+  ]
+}

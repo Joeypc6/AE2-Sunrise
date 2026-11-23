@@ -1,0 +1,29 @@
+{
+  "template": "minecraft:beacon",
+  "properties": {
+    "hardness": 5.0,
+    "light": 0,
+    "sounds": "minecraft:iron_block",
+    "explosion_resistance": 150.0
+  },
+  "state_properties": {
+    "facing": {
+      "type": "enum",
+      "values": [
+        "north",
+        "south",
+        "west",
+        "east",
+        "up",
+        "down"
+      ]
+    },
+    "update": {
+      "type": "boolean"
+    }
+  },
+  "default_state": {
+    "facing": "north",
+    "update": "false"
+  }
+}

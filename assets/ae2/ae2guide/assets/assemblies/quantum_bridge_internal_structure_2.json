@@ -1,0 +1,242 @@
+{
+  "blocks": [
+    [
+      1,
+      0,
+      0,
+      "ae2:blue_smart_dense_cable",
+      {
+        "north": "false",
+        "south": "false",
+        "east": "false",
+        "west": "false",
+        "up": "true",
+        "down": "false"
+      }
+    ],
+    [
+      5,
+      0,
+      0,
+      "ae2:blue_smart_dense_cable",
+      {
+        "north": "false",
+        "south": "false",
+        "east": "false",
+        "west": "false",
+        "up": "true",
+        "down": "false"
+      }
+    ],
+    [
+      0,
+      1,
+      0,
+      "ae2:blue_smart_dense_cable",
+      {
+        "north": "false",
+        "south": "false",
+        "east": "true",
+        "west": "false",
+        "up": "false",
+        "down": "false"
+      }
+    ],
+    [
+      1,
+      1,
+      0,
+      "ae2:blue_smart_dense_cable",
+      {
+        "north": "false",
+        "south": "true",
+        "east": "true",
+        "west": "true",
+        "up": "true",
+        "down": "true"
+      }
+    ],
+    [
+      1,
+      1,
+      1,
+      "ae2:fluix_smart_dense_cable",
+      {
+        "north": "true",
+        "south": "true",
+        "east": "false",
+        "west": "false",
+        "up": "false",
+        "down": "false"
+      }
+    ],
+    [
+      1,
+      1,
+      2,
+      "ae2:fluix_smart_dense_cable",
+      {
+        "north": "true",
+        "south": "false",
+        "east": "true",
+        "west": "false",
+        "up": "false",
+        "down": "false"
+      }
+    ],
+    [
+      2,
+      1,
+      0,
+      "ae2:blue_smart_dense_cable",
+      {
+        "north": "false",
+        "south": "false",
+        "east": "false",
+        "west": "true",
+        "up": "false",
+        "down": "false"
+      }
+    ],
+    [
+      2,
+      1,
+      2,
+      "ae2:fluix_smart_dense_cable",
+      {
+        "north": "false",
+        "south": "false",
+        "east": "true",
+        "west": "true",
+        "up": "false",
+        "down": "false"
+      }
+    ],
+    [
+      3,
+      1,
+      2,
+      "ae2:fluix_smart_dense_cable",
+      {
+        "north": "false",
+        "south": "false",
+        "east": "true",
+        "west": "true",
+        "up": "false",
+        "down": "false"
+      }
+    ],
+    [
+      4,
+      1,
+      0,
+      "ae2:blue_smart_dense_cable",
+      {
+        "north": "false",
+        "south": "false",
+        "east": "true",
+        "west": "false",
+        "up": "false",
+        "down": "false"
+      }
+    ],
+    [
+      4,
+      1,
+      2,
+      "ae2:fluix_smart_dense_cable",
+      {
+        "north": "false",
+        "south": "false",
+        "east": "true",
+        "west": "true",
+        "up": "false",
+        "down": "false"
+      }
+    ],
+    [
+      5,
+      1,
+      0,
+      "ae2:blue_smart_dense_cable",
+      {
+        "north": "false",
+        "south": "true",
+        "east": "true",
+        "west": "true",
+        "up": "true",
+        "down": "true"
+      }
+    ],
+    [
+      5,
+      1,
+      1,
+      "ae2:fluix_smart_dense_cable",
+      {
+        "north": "true",
+        "south": "true",
+        "east": "false",
+        "west": "false",
+        "up": "false",
+        "down": "false"
+      }
+    ],
+    [
+      5,
+      1,
+      2,
+      "ae2:fluix_smart_dense_cable",
+      {
+        "north": "true",
+        "south": "false",
+        "east": "false",
+        "west": "true",
+        "up": "false",
+        "down": "false"
+      }
+    ],
+    [
+      6,
+      1,
+      0,
+      "ae2:blue_smart_dense_cable",
+      {
+        "north": "false",
+        "south": "false",
+        "east": "false",
+        "west": "true",
+        "up": "false",
+        "down": "false"
+      }
+    ],
+    [
+      1,
+      2,
+      0,
+      "ae2:blue_smart_dense_cable",
+      {
+        "north": "false",
+        "south": "false",
+        "east": "false",
+        "west": "false",
+        "up": "false",
+        "down": "true"
+      }
+    ],
+    [
+      5,
+      2,
+      0,
+      "ae2:blue_smart_dense_cable",
+      {
+        "north": "false",
+        "south": "false",
+        "east": "false",
+        "west": "false",
+        "up": "false",
+        "down": "true"
+      }
+    ]
+  ]
+}

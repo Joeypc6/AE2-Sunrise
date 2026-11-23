@@ -1,0 +1,264 @@
+{
+  "multipart": [
+    {
+      "when": {
+        "facing": "north",
+        "powered": "false",
+        "x_front": "false"
+      },
+      "apply": {
+        "model": "ae2:block/hz_part/monitor_off"
+      }
+    },
+    {
+      "when": {
+        "facing": "north",
+        "powered": "true",
+        "x_front": "false"
+      },
+      "apply": {
+        "model": "ae2:block/hz_part/monitor"
+      }
+    },
+    {
+      "when": {
+        "facing": "south",
+        "powered": "false",
+        "x_front": "false"
+      },
+      "apply": {
+        "model": "ae2:block/hz_part/monitor_off",
+        "y": 180
+      }
+    },
+    {
+      "when": {
+        "facing": "south",
+        "powered": "true",
+        "x_front": "false"
+      },
+      "apply": {
+        "model": "ae2:block/hz_part/monitor",
+        "y": 180
+      }
+    },
+    {
+      "when": {
+        "facing": "west",
+        "powered": "false",
+        "x_front": "false"
+      },
+      "apply": {
+        "model": "ae2:block/hz_part/monitor_off",
+        "y": 270
+      }
+    },
+    {
+      "when": {
+        "facing": "west",
+        "powered": "true",
+        "x_front": "false"
+      },
+      "apply": {
+        "model": "ae2:block/hz_part/monitor",
+        "y": 270
+      }
+    },
+    {
+      "when": {
+        "facing": "east",
+        "powered": "false",
+        "x_front": "false"
+      },
+      "apply": {
+        "model": "ae2:block/hz_part/monitor_off",
+        "y": 90
+      }
+    },
+    {
+      "when": {
+        "facing": "east",
+        "powered": "true",
+        "x_front": "false"
+      },
+      "apply": {
+        "model": "ae2:block/hz_part/monitor",
+        "y": 90
+      }
+    },
+    {
+      "when": {
+        "facing": "up",
+        "powered": "false",
+        "x_front": "false"
+      },
+      "apply": {
+        "model": "ae2:block/hz_part/monitor_off",
+        "x": 270
+      }
+    },
+    {
+      "when": {
+        "facing": "up",
+        "powered": "true",
+        "x_front": "false"
+      },
+      "apply": {
+        "model": "ae2:block/hz_part/monitor",
+        "x": 270
+      }
+    },
+    {
+      "when": {
+        "facing": "down",
+        "powered": "false",
+        "x_front": "false"
+      },
+      "apply": {
+        "model": "ae2:block/hz_part/monitor_off",
+        "x": 90
+      }
+    },
+    {
+      "when": {
+        "facing": "down",
+        "powered": "true",
+        "x_front": "false"
+      },
+      "apply": {
+        "model": "ae2:block/hz_part/monitor",
+        "x": 90
+      }
+    },
+    {
+      "when": {
+        "facing": "south",
+        "powered": "false",
+        "x_front": "true"
+      },
+      "apply": {
+        "model": "ae2:block/hz_part/monitor_off"
+      }
+    },
+    {
+      "when": {
+        "facing": "south",
+        "powered": "true",
+        "x_front": "true"
+      },
+      "apply": {
+        "model": "ae2:block/hz_part/monitor"
+      }
+    },
+    {
+      "when": {
+        "facing": "north",
+        "powered": "false",
+        "x_front": "true"
+      },
+      "apply": {
+        "model": "ae2:block/hz_part/monitor_off",
+        "y": 180
+      }
+    },
+    {
+      "when": {
+        "facing": "north",
+        "powered": "true",
+        "x_front": "true"
+      },
+      "apply": {
+        "model": "ae2:block/hz_part/monitor",
+        "y": 180
+      }
+    },
+    {
+      "when": {
+        "facing": "east",
+        "powered": "false",
+        "x_front": "true"
+      },
+      "apply": {
+        "model": "ae2:block/hz_part/monitor_off",
+        "y": 270
+      }
+    },
+    {
+      "when": {
+        "facing": "east",
+        "powered": "true",
+        "x_front": "true"
+      },
+      "apply": {
+        "model": "ae2:block/hz_part/monitor",
+        "y": 270
+      }
+    },
+    {
+      "when": {
+        "facing": "west",
+        "powered": "false",
+        "x_front": "true"
+      },
+      "apply": {
+        "model": "ae2:block/hz_part/monitor_off",
+        "y": 90
+      }
+    },
+    {
+      "when": {
+        "facing": "west",
+        "powered": "true",
+        "x_front": "true"
+      },
+      "apply": {
+        "model": "ae2:block/hz_part/monitor",
+        "y": 90
+      }
+    },
+    {
+      "when": {
+        "facing": "down",
+        "powered": "false",
+        "x_front": "true"
+      },
+      "apply": {
+        "model": "ae2:block/hz_part/monitor_off",
+        "x": 270
+      }
+    },
+    {
+      "when": {
+        "facing": "down",
+        "powered": "true",
+        "x_front": "true"
+      },
+      "apply": {
+        "model": "ae2:block/hz_part/monitor",
+        "x": 270
+      }
+    },
+    {
+      "when": {
+        "facing": "up",
+        "powered": "false",
+        "x_front": "true"
+      },
+      "apply": {
+        "model": "ae2:block/hz_part/monitor_off",
+        "x": 90
+      }
+    },
+    {
+      "when": {
+        "facing": "up",
+        "powered": "true",
+        "x_front": "true"
+      },
+      "apply": {
+        "model": "ae2:block/hz_part/monitor",
+        "x": 90
+      }
+    }
+  ]
+}

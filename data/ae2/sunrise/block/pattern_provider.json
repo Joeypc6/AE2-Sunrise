@@ -1,0 +1,28 @@
+{
+  "template": "minecraft:barrel",
+  "properties": {
+    "hardness": 2.2,
+    "sounds": "minecraft:iron_block",
+    "explosion_resistance": 11.0
+  },
+  "state_properties": {
+    "push_direction": {
+      "type": "enum",
+      "values": [
+        "all",
+        "down",
+        "up",
+        "north",
+        "south",
+        "west",
+        "east"
+      ]
+    }
+  },
+  "default_state": {
+    "push_direction": "all"
+  },
+  "components": {
+    "!minecraft:cooking_fuel": {}
+  }
+}

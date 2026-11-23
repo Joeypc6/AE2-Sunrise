@@ -1,0 +1,67 @@
+{
+  "textures": {
+    "base": "ae2:block/part/cable/dense_covered/transparent",
+    "particle": "ae2:block/part/cable/dense_covered/transparent"
+  },
+  "elements": [
+    {
+      "from": [
+        4,
+        11,
+        4
+      ],
+      "to": [
+        12,
+        16,
+        12
+      ],
+      "faces": {
+        "down": {
+          "texture": "#base",
+          "uv": [
+            4,
+            4,
+            12,
+            12
+          ]
+        },
+        "north": {
+          "texture": "#base",
+          "uv": [
+            4,
+            0,
+            12,
+            5
+          ]
+        },
+        "south": {
+          "texture": "#base",
+          "uv": [
+            4,
+            0,
+            12,
+            5
+          ]
+        },
+        "west": {
+          "texture": "#base",
+          "uv": [
+            4,
+            0,
+            12,
+            5
+          ]
+        },
+        "east": {
+          "texture": "#base",
+          "uv": [
+            4,
+            0,
+            12,
+            5
+          ]
+        }
+      }
+    }
+  ]
+}

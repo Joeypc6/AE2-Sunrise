@@ -1,0 +1,352 @@
+{
+  "multipart": [
+    {
+      "when": {
+        "down": "true",
+        "up": "true",
+        "north": "false",
+        "south": "false",
+        "west": "false",
+        "east": "false",
+        "x_core": "false"
+      },
+      "apply": {
+        "model": "ae2:block/hz_cable/smart_red_straight_y_ch0"
+      }
+    },
+    {
+      "when": {
+        "down": "false",
+        "up": "false",
+        "north": "true",
+        "south": "true",
+        "west": "false",
+        "east": "false",
+        "x_core": "false"
+      },
+      "apply": {
+        "model": "ae2:block/hz_cable/smart_red_straight_z_ch0"
+      }
+    },
+    {
+      "when": {
+        "down": "false",
+        "up": "false",
+        "north": "false",
+        "south": "false",
+        "west": "true",
+        "east": "true",
+        "x_core": "false"
+      },
+      "apply": {
+        "model": "ae2:block/hz_cable/smart_red_straight_x_ch0"
+      }
+    },
+    {
+      "when": {
+        "AND": [
+          {
+            "down": "true"
+          },
+          {
+            "OR": [
+              {
+                "down": "false"
+              },
+              {
+                "up": "false"
+              },
+              {
+                "north": "true"
+              },
+              {
+                "south": "true"
+              },
+              {
+                "west": "true"
+              },
+              {
+                "east": "true"
+              },
+              {
+                "x_core": "true"
+              }
+            ]
+          }
+        ]
+      },
+      "apply": {
+        "model": "ae2:block/hz_cable/smart_red_arm_down_ch0"
+      }
+    },
+    {
+      "when": {
+        "AND": [
+          {
+            "up": "true"
+          },
+          {
+            "OR": [
+              {
+                "down": "false"
+              },
+              {
+                "up": "false"
+              },
+              {
+                "north": "true"
+              },
+              {
+                "south": "true"
+              },
+              {
+                "west": "true"
+              },
+              {
+                "east": "true"
+              },
+              {
+                "x_core": "true"
+              }
+            ]
+          }
+        ]
+      },
+      "apply": {
+        "model": "ae2:block/hz_cable/smart_red_arm_up_ch0"
+      }
+    },
+    {
+      "when": {
+        "AND": [
+          {
+            "north": "true"
+          },
+          {
+            "OR": [
+              {
+                "north": "false"
+              },
+              {
+                "south": "false"
+              },
+              {
+                "down": "true"
+              },
+              {
+                "up": "true"
+              },
+              {
+                "west": "true"
+              },
+              {
+                "east": "true"
+              },
+              {
+                "x_core": "true"
+              }
+            ]
+          }
+        ]
+      },
+      "apply": {
+        "model": "ae2:block/hz_cable/smart_red_arm_north_ch0"
+      }
+    },
+    {
+      "when": {
+        "AND": [
+          {
+            "south": "true"
+          },
+          {
+            "OR": [
+              {
+                "north": "false"
+              },
+              {
+                "south": "false"
+              },
+              {
+                "down": "true"
+              },
+              {
+                "up": "true"
+              },
+              {
+                "west": "true"
+              },
+              {
+                "east": "true"
+              },
+              {
+                "x_core": "true"
+              }
+            ]
+          }
+        ]
+      },
+      "apply": {
+        "model": "ae2:block/hz_cable/smart_red_arm_south_ch0"
+      }
+    },
+    {
+      "when": {
+        "AND": [
+          {
+            "west": "true"
+          },
+          {
+            "OR": [
+              {
+                "west": "false"
+              },
+              {
+                "east": "false"
+              },
+              {
+                "down": "true"
+              },
+              {
+                "up": "true"
+              },
+              {
+                "north": "true"
+              },
+              {
+                "south": "true"
+              },
+              {
+                "x_core": "true"
+              }
+            ]
+          }
+        ]
+      },
+      "apply": {
+        "model": "ae2:block/hz_cable/smart_red_arm_west_ch0"
+      }
+    },
+    {
+      "when": {
+        "AND": [
+          {
+            "east": "true"
+          },
+          {
+            "OR": [
+              {
+                "west": "false"
+              },
+              {
+                "east": "false"
+              },
+              {
+                "down": "true"
+              },
+              {
+                "up": "true"
+              },
+              {
+                "north": "true"
+              },
+              {
+                "south": "true"
+              },
+              {
+                "x_core": "true"
+              }
+            ]
+          }
+        ]
+      },
+      "apply": {
+        "model": "ae2:block/hz_cable/smart_red_arm_east_ch0"
+      }
+    },
+    {
+      "when": {
+        "AND": [
+          {
+            "OR": [
+              {
+                "down": "false"
+              },
+              {
+                "up": "false"
+              },
+              {
+                "north": "true"
+              },
+              {
+                "south": "true"
+              },
+              {
+                "west": "true"
+              },
+              {
+                "east": "true"
+              },
+              {
+                "x_core": "true"
+              }
+            ]
+          },
+          {
+            "OR": [
+              {
+                "north": "false"
+              },
+              {
+                "south": "false"
+              },
+              {
+                "down": "true"
+              },
+              {
+                "up": "true"
+              },
+              {
+                "west": "true"
+              },
+              {
+                "east": "true"
+              },
+              {
+                "x_core": "true"
+              }
+            ]
+          },
+          {
+            "OR": [
+              {
+                "west": "false"
+              },
+              {
+                "east": "false"
+              },
+              {
+                "down": "true"
+              },
+              {
+                "up": "true"
+              },
+              {
+                "north": "true"
+              },
+              {
+                "south": "true"
+              },
+              {
+                "x_core": "true"
+              }
+            ]
+          }
+        ]
+      },
+      "apply": {
+        "model": "ae2:block/hz_cable/smart_red_core"
+      }
+    }
+  ]
+}

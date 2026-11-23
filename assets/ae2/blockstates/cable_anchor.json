@@ -1,0 +1,264 @@
+{
+  "multipart": [
+    {
+      "when": {
+        "facing": "north",
+        "powered": "false",
+        "x_front": "false"
+      },
+      "apply": {
+        "model": "ae2:block/hz_part/cable_anchor"
+      }
+    },
+    {
+      "when": {
+        "facing": "north",
+        "powered": "true",
+        "x_front": "false"
+      },
+      "apply": {
+        "model": "ae2:block/hz_part/cable_anchor"
+      }
+    },
+    {
+      "when": {
+        "facing": "south",
+        "powered": "false",
+        "x_front": "false"
+      },
+      "apply": {
+        "model": "ae2:block/hz_part/cable_anchor",
+        "y": 180
+      }
+    },
+    {
+      "when": {
+        "facing": "south",
+        "powered": "true",
+        "x_front": "false"
+      },
+      "apply": {
+        "model": "ae2:block/hz_part/cable_anchor",
+        "y": 180
+      }
+    },
+    {
+      "when": {
+        "facing": "west",
+        "powered": "false",
+        "x_front": "false"
+      },
+      "apply": {
+        "model": "ae2:block/hz_part/cable_anchor",
+        "y": 270
+      }
+    },
+    {
+      "when": {
+        "facing": "west",
+        "powered": "true",
+        "x_front": "false"
+      },
+      "apply": {
+        "model": "ae2:block/hz_part/cable_anchor",
+        "y": 270
+      }
+    },
+    {
+      "when": {
+        "facing": "east",
+        "powered": "false",
+        "x_front": "false"
+      },
+      "apply": {
+        "model": "ae2:block/hz_part/cable_anchor",
+        "y": 90
+      }
+    },
+    {
+      "when": {
+        "facing": "east",
+        "powered": "true",
+        "x_front": "false"
+      },
+      "apply": {
+        "model": "ae2:block/hz_part/cable_anchor",
+        "y": 90
+      }
+    },
+    {
+      "when": {
+        "facing": "up",
+        "powered": "false",
+        "x_front": "false"
+      },
+      "apply": {
+        "model": "ae2:block/hz_part/cable_anchor",
+        "x": 270
+      }
+    },
+    {
+      "when": {
+        "facing": "up",
+        "powered": "true",
+        "x_front": "false"
+      },
+      "apply": {
+        "model": "ae2:block/hz_part/cable_anchor",
+        "x": 270
+      }
+    },
+    {
+      "when": {
+        "facing": "down",
+        "powered": "false",
+        "x_front": "false"
+      },
+      "apply": {
+        "model": "ae2:block/hz_part/cable_anchor",
+        "x": 90
+      }
+    },
+    {
+      "when": {
+        "facing": "down",
+        "powered": "true",
+        "x_front": "false"
+      },
+      "apply": {
+        "model": "ae2:block/hz_part/cable_anchor",
+        "x": 90
+      }
+    },
+    {
+      "when": {
+        "facing": "south",
+        "powered": "false",
+        "x_front": "true"
+      },
+      "apply": {
+        "model": "ae2:block/hz_part/cable_anchor"
+      }
+    },
+    {
+      "when": {
+        "facing": "south",
+        "powered": "true",
+        "x_front": "true"
+      },
+      "apply": {
+        "model": "ae2:block/hz_part/cable_anchor"
+      }
+    },
+    {
+      "when": {
+        "facing": "north",
+        "powered": "false",
+        "x_front": "true"
+      },
+      "apply": {
+        "model": "ae2:block/hz_part/cable_anchor",
+        "y": 180
+      }
+    },
+    {
+      "when": {
+        "facing": "north",
+        "powered": "true",
+        "x_front": "true"
+      },
+      "apply": {
+        "model": "ae2:block/hz_part/cable_anchor",
+        "y": 180
+      }
+    },
+    {
+      "when": {
+        "facing": "east",
+        "powered": "false",
+        "x_front": "true"
+      },
+      "apply": {
+        "model": "ae2:block/hz_part/cable_anchor",
+        "y": 270
+      }
+    },
+    {
+      "when": {
+        "facing": "east",
+        "powered": "true",
+        "x_front": "true"
+      },
+      "apply": {
+        "model": "ae2:block/hz_part/cable_anchor",
+        "y": 270
+      }
+    },
+    {
+      "when": {
+        "facing": "west",
+        "powered": "false",
+        "x_front": "true"
+      },
+      "apply": {
+        "model": "ae2:block/hz_part/cable_anchor",
+        "y": 90
+      }
+    },
+    {
+      "when": {
+        "facing": "west",
+        "powered": "true",
+        "x_front": "true"
+      },
+      "apply": {
+        "model": "ae2:block/hz_part/cable_anchor",
+        "y": 90
+      }
+    },
+    {
+      "when": {
+        "facing": "down",
+        "powered": "false",
+        "x_front": "true"
+      },
+      "apply": {
+        "model": "ae2:block/hz_part/cable_anchor",
+        "x": 270
+      }
+    },
+    {
+      "when": {
+        "facing": "down",
+        "powered": "true",
+        "x_front": "true"
+      },
+      "apply": {
+        "model": "ae2:block/hz_part/cable_anchor",
+        "x": 270
+      }
+    },
+    {
+      "when": {
+        "facing": "up",
+        "powered": "false",
+        "x_front": "true"
+      },
+      "apply": {
+        "model": "ae2:block/hz_part/cable_anchor",
+        "x": 90
+      }
+    },
+    {
+      "when": {
+        "facing": "up",
+        "powered": "true",
+        "x_front": "true"
+      },
+      "apply": {
+        "model": "ae2:block/hz_part/cable_anchor",
+        "x": 90
+      }
+    }
+  ]
+}

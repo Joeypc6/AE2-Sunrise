@@ -1,0 +1,8 @@
+{
+  "template": "minecraft:beacon",
+  "properties": {
+    "hardness": 5.0,
+    "light": 0,
+    "explosion_resistance": 150.0
+  }
+}

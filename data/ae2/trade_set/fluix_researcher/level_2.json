@@ -1,0 +1,9 @@
+{
+  "amount": 2,
+  "random_sequence": "ae2:trade_set/fluix_researcher/level_2",
+  "trades": [
+    "ae2:fluix_researcher/2/sky_stone_block",
+    "ae2:fluix_researcher/2/charged_certus_quartz_crystal",
+    "ae2:fluix_researcher/2/silicon"
+  ]
+}

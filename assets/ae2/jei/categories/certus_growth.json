@@ -1,0 +1,190 @@
+{
+  "id": "ae2:certus_growth",
+  "title": "ae2.rei_jei_integration.certus_quartz_growth",
+  "icon": "ae2:flawless_budding_quartz",
+  "catalysts": [
+    "ae2:growth_accelerator"
+  ],
+  "recipes": [
+    {
+      "input": "ae2:flawless_budding_quartz",
+      "result": {
+        "id": "ae2:small_quartz_bud",
+        "count": 1
+      },
+      "n0": "ae2.rei_jei_integration.quartz_buds_grow_on_budding_quartz",
+      "n1": "ae2.rei_jei_integration.flawless_budding_quartz_description"
+    },
+    {
+      "input": "ae2:flawed_budding_quartz",
+      "result": {
+        "id": "ae2:small_quartz_bud",
+        "count": 1
+      },
+      "n0": "ae2.rei_jei_integration.quartz_buds_grow_on_budding_quartz"
+    },
+    {
+      "input": "ae2:chipped_budding_quartz",
+      "result": {
+        "id": "ae2:small_quartz_bud",
+        "count": 1
+      },
+      "n0": "ae2.rei_jei_integration.quartz_buds_grow_on_budding_quartz"
+    },
+    {
+      "input": "ae2:damaged_budding_quartz",
+      "result": {
+        "id": "ae2:small_quartz_bud",
+        "count": 1
+      },
+      "n0": "ae2.rei_jei_integration.quartz_buds_grow_on_budding_quartz"
+    },
+    {
+      "input": "ae2:small_quartz_bud",
+      "result": {
+        "id": "ae2:medium_quartz_bud",
+        "count": 1
+      },
+      "n0": "ae2.rei_jei_integration.crystal_growth_accelerators_effect"
+    },
+    {
+      "input": "ae2:medium_quartz_bud",
+      "result": {
+        "id": "ae2:large_quartz_bud",
+        "count": 1
+      },
+      "n0": "ae2.rei_jei_integration.crystal_growth_accelerators_effect"
+    },
+    {
+      "input": "ae2:large_quartz_bud",
+      "result": {
+        "id": "ae2:quartz_cluster",
+        "count": 1
+      },
+      "n0": "ae2.rei_jei_integration.crystal_growth_accelerators_effect"
+    },
+    {
+      "input": "ae2:quartz_cluster",
+      "result": {
+        "id": "ae2:certus_quartz_crystal",
+        "count": 4
+      },
+      "n0": "ae2.rei_jei_integration.fully_grown_buds_drop_crystals",
+      "n1": "ae2.rei_jei_integration.fortune_applies"
+    },
+    {
+      "input": "ae2:flawed_budding_quartz",
+      "result": {
+        "id": "ae2:chipped_budding_quartz",
+        "count": 1
+      },
+      "n0": "ae2.rei_jei_integration.imperfect_budding_quartz_decays"
+    },
+    {
+      "input": "ae2:chipped_budding_quartz",
+      "result": {
+        "id": "ae2:damaged_budding_quartz",
+        "count": 1
+      },
+      "n0": "ae2.rei_jei_integration.imperfect_budding_quartz_decays"
+    },
+    {
+      "input": "ae2:damaged_budding_quartz",
+      "result": {
+        "id": "ae2:quartz_block",
+        "count": 1
+      },
+      "n0": "ae2.rei_jei_integration.imperfect_budding_quartz_decays"
+    },
+    {
+      "input": [
+        "ae2:small_quartz_bud",
+        "ae2:medium_quartz_bud",
+        "ae2:large_quartz_bud"
+      ],
+      "result": {
+        "id": "ae2:certus_quartz_dust",
+        "count": 1
+      },
+      "n0": "ae2.rei_jei_integration.buds_drop_dust_when_not_fully_grown"
+    },
+    {
+      "input": "ae2:flawless_budding_quartz",
+      "result": {
+        "id": "ae2:flawed_budding_quartz",
+        "count": 1
+      },
+      "n0": "ae2.rei_jei_integration.budding_quartz_decays_when_broken",
+      "n1": "ae2.rei_jei_integration.silk_touch_prevents_decay_for_imperfect",
+      "n2": "ae2.rei_jei_integration.spatial_io_never_causes_any_decay"
+    },
+    {
+      "input": "ae2:charged_certus_quartz_crystal",
+      "result": {
+        "id": "ae2:damaged_budding_quartz",
+        "count": 1
+      },
+      "n0": "ae2.rei_jei_integration.budding_quartz_creation_and_worldgen"
+    }
+  ],
+  "size": [
+    150,
+    72
+  ],
+  "arrow": [
+    52,
+    6
+  ],
+  "slots": [
+    {
+      "x": 31,
+      "y": 6,
+      "role": "input",
+      "path": "input"
+    },
+    {
+      "x": 81,
+      "y": 6,
+      "role": "output",
+      "path": "result"
+    }
+  ],
+  "texts": [
+    {
+      "x": 2,
+      "y": 30,
+      "text": "%s",
+      "args": [
+        "n0"
+      ],
+      "tr_args": [
+        0
+      ],
+      "needs": "n0"
+    },
+    {
+      "x": 2,
+      "y": 42,
+      "text": "%s",
+      "args": [
+        "n1"
+      ],
+      "tr_args": [
+        0
+      ],
+      "needs": "n1"
+    },
+    {
+      "x": 2,
+      "y": 54,
+      "text": "%s",
+      "args": [
+        "n2"
+      ],
+      "tr_args": [
+        0
+      ],
+      "needs": "n2"
+    }
+  ]
+}

@@ -1,0 +1,128 @@
+{
+  "textures": {
+    "base": "ae2:block/part/cable/smart/blue",
+    "particle": "ae2:block/part/cable/smart/blue",
+    "channels": "ae2:block/hz_cable/smart_blue_ch0"
+  },
+  "elements": [
+    {
+      "from": [
+        11,
+        6,
+        6
+      ],
+      "to": [
+        16,
+        10,
+        10
+      ],
+      "faces": {
+        "down": {
+          "texture": "#base",
+          "uv": [
+            11,
+            10,
+            16,
+            6
+          ]
+        },
+        "up": {
+          "texture": "#base",
+          "uv": [
+            11,
+            6,
+            16,
+            10
+          ]
+        },
+        "north": {
+          "texture": "#base",
+          "uv": [
+            0,
+            6,
+            5,
+            10
+          ]
+        },
+        "south": {
+          "texture": "#base",
+          "uv": [
+            11,
+            6,
+            16,
+            10
+          ]
+        },
+        "west": {
+          "texture": "#base",
+          "uv": [
+            6,
+            6,
+            10,
+            10
+          ]
+        }
+      }
+    },
+    {
+      "from": [
+        10.99,
+        5.99,
+        5.99
+      ],
+      "to": [
+        16.01,
+        10.01,
+        10.01
+      ],
+      "faces": {
+        "down": {
+          "texture": "#channels",
+          "uv": [
+            11,
+            10,
+            16,
+            6
+          ]
+        },
+        "up": {
+          "texture": "#channels",
+          "uv": [
+            11,
+            6,
+            16,
+            10
+          ]
+        },
+        "north": {
+          "texture": "#channels",
+          "uv": [
+            0,
+            6,
+            5,
+            10
+          ]
+        },
+        "south": {
+          "texture": "#channels",
+          "uv": [
+            11,
+            6,
+            16,
+            10
+          ]
+        },
+        "west": {
+          "texture": "#channels",
+          "uv": [
+            6,
+            6,
+            10,
+            10
+          ]
+        }
+      },
+      "light_emission": 15
+    }
+  ]
+}

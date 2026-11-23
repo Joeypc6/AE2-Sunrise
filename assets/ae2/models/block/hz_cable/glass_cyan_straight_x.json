@@ -1,0 +1,58 @@
+{
+  "textures": {
+    "base": "ae2:block/part/cable/glass/cyan",
+    "particle": "ae2:block/part/cable/glass/cyan"
+  },
+  "elements": [
+    {
+      "from": [
+        0,
+        6,
+        6
+      ],
+      "to": [
+        16,
+        10,
+        10
+      ],
+      "faces": {
+        "down": {
+          "texture": "#base",
+          "uv": [
+            0,
+            6,
+            16,
+            10
+          ]
+        },
+        "up": {
+          "texture": "#base",
+          "uv": [
+            0,
+            6,
+            16,
+            10
+          ]
+        },
+        "north": {
+          "texture": "#base",
+          "uv": [
+            0,
+            6,
+            16,
+            10
+          ]
+        },
+        "south": {
+          "texture": "#base",
+          "uv": [
+            0,
+            6,
+            16,
+            10
+          ]
+        }
+      }
+    }
+  ]
+}

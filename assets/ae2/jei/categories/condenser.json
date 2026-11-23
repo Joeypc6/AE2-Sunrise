@@ -1,0 +1,56 @@
+{
+  "id": "ae2:condenser",
+  "title": "block.ae2.condenser",
+  "icon": "ae2:condenser",
+  "catalysts": [
+    "ae2:condenser"
+  ],
+  "recipes": [
+    {
+      "component": "ae2:cell_component_1k",
+      "result": {
+        "id": "ae2:matter_ball"
+      },
+      "note": "256 per item"
+    },
+    {
+      "component": "ae2:cell_component_64k",
+      "result": {
+        "id": "ae2:singularity"
+      },
+      "note": "256,000 per item"
+    }
+  ],
+  "size": [
+    94,
+    48
+  ],
+  "arrow": [
+    28,
+    6
+  ],
+  "slots": [
+    {
+      "x": 6,
+      "y": 6,
+      "role": "other",
+      "path": "component"
+    },
+    {
+      "x": 64,
+      "y": 6,
+      "role": "output",
+      "path": "result"
+    }
+  ],
+  "texts": [
+    {
+      "x": 2,
+      "y": 32,
+      "text": "%s",
+      "args": [
+        "note"
+      ]
+    }
+  ]
+}

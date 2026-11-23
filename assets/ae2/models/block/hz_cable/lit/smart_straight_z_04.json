@@ -1,0 +1,85 @@
+{
+  "textures": {
+    "channels": "ae2:block/part/cable/smart/channels_04",
+    "particle": "ae2:block/part/cable/smart/channels_04"
+  },
+  "elements": [
+    {
+      "from": [
+        4.98,
+        4.98,
+        -0.02
+      ],
+      "to": [
+        11.02,
+        11.02,
+        16.02
+      ],
+      "faces": {
+        "down": {
+          "texture": "#channels",
+          "uv": [
+            5,
+            0,
+            11,
+            5
+          ],
+          "tintindex": 0
+        },
+        "up": {
+          "texture": "#channels",
+          "uv": [
+            5,
+            0,
+            11,
+            5
+          ],
+          "tintindex": 0
+        },
+        "north": {
+          "texture": "#channels",
+          "uv": [
+            5,
+            5,
+            11,
+            11
+          ],
+          "tintindex": 0
+        },
+        "south": {
+          "texture": "#channels",
+          "uv": [
+            5,
+            5,
+            11,
+            11
+          ],
+          "tintindex": 0
+        },
+        "west": {
+          "texture": "#channels",
+          "uv": [
+            0,
+            11,
+            5,
+            5
+          ],
+          "rotation": 180,
+          "tintindex": 0
+        },
+        "east": {
+          "texture": "#channels",
+          "uv": [
+            0,
+            11,
+            5,
+            5
+          ],
+          "rotation": 180,
+          "tintindex": 0
+        }
+      },
+      "light_emission": 15
+    }
+  ]
+}

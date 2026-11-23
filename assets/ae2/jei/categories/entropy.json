@@ -1,0 +1,151 @@
+{
+  "id": "ae2:entropy",
+  "title": "item.ae2.entropy_manipulator",
+  "icon": "ae2:entropy_manipulator",
+  "catalysts": [
+    "ae2:entropy_manipulator"
+  ],
+  "recipes": [
+    {
+      "input": "minecraft:water_bucket",
+      "results": [
+        {
+          "id": "minecraft:snowball"
+        }
+      ],
+      "mode": "Cool (1600 AE)",
+      "click": "ae2.rei_jei_integration.shift_right_click"
+    },
+    {
+      "input": "minecraft:grass_block",
+      "results": [
+        {
+          "id": "minecraft:dirt"
+        }
+      ],
+      "mode": "Cool (1600 AE)",
+      "click": "ae2.rei_jei_integration.shift_right_click"
+    },
+    {
+      "input": "minecraft:lava_bucket",
+      "results": [
+        {
+          "id": "minecraft:obsidian"
+        }
+      ],
+      "mode": "Cool (1600 AE)",
+      "click": "ae2.rei_jei_integration.shift_right_click"
+    },
+    {
+      "input": "minecraft:stone_bricks",
+      "results": [
+        {
+          "id": "minecraft:cracked_stone_bricks"
+        }
+      ],
+      "mode": "Cool (1600 AE)",
+      "click": "ae2.rei_jei_integration.shift_right_click"
+    },
+    {
+      "input": "minecraft:stone",
+      "results": [
+        {
+          "id": "minecraft:cobblestone"
+        }
+      ],
+      "mode": "Cool (1600 AE)",
+      "click": "ae2.rei_jei_integration.shift_right_click"
+    },
+    {
+      "input": "minecraft:water_bucket",
+      "results": [
+        {
+          "id": "minecraft:ice"
+        }
+      ],
+      "mode": "Cool (1600 AE)",
+      "click": "ae2.rei_jei_integration.shift_right_click"
+    },
+    {
+      "input": "minecraft:cobblestone",
+      "results": [
+        {
+          "id": "minecraft:stone"
+        }
+      ],
+      "mode": "Heat (1600 AE)",
+      "click": "ae2.rei_jei_integration.right_click"
+    },
+    {
+      "input": "minecraft:ice",
+      "results": [
+        {
+          "id": "minecraft:water_bucket"
+        }
+      ],
+      "mode": "Heat (1600 AE)",
+      "click": "ae2.rei_jei_integration.right_click"
+    },
+    {
+      "input": "minecraft:snow",
+      "results": [
+        {
+          "id": "minecraft:water_bucket"
+        }
+      ],
+      "mode": "Heat (1600 AE)",
+      "click": "ae2.rei_jei_integration.right_click"
+    },
+    {
+      "input": "minecraft:water_bucket",
+      "results": [],
+      "mode": "Heat (1600 AE)",
+      "click": "ae2.rei_jei_integration.right_click"
+    }
+  ],
+  "size": [
+    130,
+    50
+  ],
+  "arrow": [
+    52,
+    10
+  ],
+  "slots": [
+    {
+      "x": 31,
+      "y": 10,
+      "role": "input",
+      "path": "input"
+    },
+    {
+      "x": 81,
+      "y": 10,
+      "role": "output",
+      "path": "results",
+      "columns": 2,
+      "step": 18
+    }
+  ],
+  "texts": [
+    {
+      "x": 3,
+      "y": 32,
+      "text": "%s",
+      "args": [
+        "mode"
+      ]
+    },
+    {
+      "x": 3,
+      "y": 42,
+      "text": "%s",
+      "args": [
+        "click"
+      ],
+      "tr_args": [
+        0
+      ]
+    }
+  ]
+}

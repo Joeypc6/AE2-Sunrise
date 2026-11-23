@@ -1,0 +1,11 @@
+{
+  "textures": ["ae2:energy"],
+  "sunrise:behaviour": {
+    "velocity": [0.0, 0.0, 0.0],
+    "gravity": 0.0,
+    "friction": 1.0,
+    "lifetime": 6,
+    "size": [0.065, 0.0],
+    "alpha": [1.0, 0.6]
+  }
+}

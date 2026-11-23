@@ -1,0 +1,678 @@
+{
+  "multipart": [
+    {
+      "when": {
+        "facing": "north",
+        "powered": "false",
+        "x_front": "false"
+      },
+      "apply": {
+        "model": "ae2:block/hz_part/cable_interface"
+      }
+    },
+    {
+      "when": {
+        "facing": "north",
+        "powered": "false",
+        "x_front": "false"
+      },
+      "apply": {
+        "model": "ae2:block/hz_part/cable_interface_status_off"
+      }
+    },
+    {
+      "when": {
+        "facing": "north",
+        "powered": "true",
+        "x_front": "false"
+      },
+      "apply": {
+        "model": "ae2:block/hz_part/cable_interface"
+      }
+    },
+    {
+      "when": {
+        "facing": "north",
+        "powered": "true",
+        "with_channel": "false",
+        "x_front": "false"
+      },
+      "apply": {
+        "model": "ae2:block/hz_part/cable_interface_status_on"
+      }
+    },
+    {
+      "when": {
+        "facing": "north",
+        "powered": "true",
+        "with_channel": "true",
+        "x_front": "false"
+      },
+      "apply": {
+        "model": "ae2:block/hz_part/cable_interface_status_has_channel"
+      }
+    },
+    {
+      "when": {
+        "facing": "south",
+        "powered": "false",
+        "x_front": "false"
+      },
+      "apply": {
+        "model": "ae2:block/hz_part/cable_interface",
+        "y": 180
+      }
+    },
+    {
+      "when": {
+        "facing": "south",
+        "powered": "false",
+        "x_front": "false"
+      },
+      "apply": {
+        "model": "ae2:block/hz_part/cable_interface_status_off",
+        "y": 180
+      }
+    },
+    {
+      "when": {
+        "facing": "south",
+        "powered": "true",
+        "x_front": "false"
+      },
+      "apply": {
+        "model": "ae2:block/hz_part/cable_interface",
+        "y": 180
+      }
+    },
+    {
+      "when": {
+        "facing": "south",
+        "powered": "true",
+        "with_channel": "false",
+        "x_front": "false"
+      },
+      "apply": {
+        "model": "ae2:block/hz_part/cable_interface_status_on",
+        "y": 180
+      }
+    },
+    {
+      "when": {
+        "facing": "south",
+        "powered": "true",
+        "with_channel": "true",
+        "x_front": "false"
+      },
+      "apply": {
+        "model": "ae2:block/hz_part/cable_interface_status_has_channel",
+        "y": 180
+      }
+    },
+    {
+      "when": {
+        "facing": "west",
+        "powered": "false",
+        "x_front": "false"
+      },
+      "apply": {
+        "model": "ae2:block/hz_part/cable_interface",
+        "y": 270
+      }
+    },
+    {
+      "when": {
+        "facing": "west",
+        "powered": "false",
+        "x_front": "false"
+      },
+      "apply": {
+        "model": "ae2:block/hz_part/cable_interface_status_off",
+        "y": 270
+      }
+    },
+    {
+      "when": {
+        "facing": "west",
+        "powered": "true",
+        "x_front": "false"
+      },
+      "apply": {
+        "model": "ae2:block/hz_part/cable_interface",
+        "y": 270
+      }
+    },
+    {
+      "when": {
+        "facing": "west",
+        "powered": "true",
+        "with_channel": "false",
+        "x_front": "false"
+      },
+      "apply": {
+        "model": "ae2:block/hz_part/cable_interface_status_on",
+        "y": 270
+      }
+    },
+    {
+      "when": {
+        "facing": "west",
+        "powered": "true",
+        "with_channel": "true",
+        "x_front": "false"
+      },
+      "apply": {
+        "model": "ae2:block/hz_part/cable_interface_status_has_channel",
+        "y": 270
+      }
+    },
+    {
+      "when": {
+        "facing": "east",
+        "powered": "false",
+        "x_front": "false"
+      },
+      "apply": {
+        "model": "ae2:block/hz_part/cable_interface",
+        "y": 90
+      }
+    },
+    {
+      "when": {
+        "facing": "east",
+        "powered": "false",
+        "x_front": "false"
+      },
+      "apply": {
+        "model": "ae2:block/hz_part/cable_interface_status_off",
+        "y": 90
+      }
+    },
+    {
+      "when": {
+        "facing": "east",
+        "powered": "true",
+        "x_front": "false"
+      },
+      "apply": {
+        "model": "ae2:block/hz_part/cable_interface",
+        "y": 90
+      }
+    },
+    {
+      "when": {
+        "facing": "east",
+        "powered": "true",
+        "with_channel": "false",
+        "x_front": "false"
+      },
+      "apply": {
+        "model": "ae2:block/hz_part/cable_interface_status_on",
+        "y": 90
+      }
+    },
+    {
+      "when": {
+        "facing": "east",
+        "powered": "true",
+        "with_channel": "true",
+        "x_front": "false"
+      },
+      "apply": {
+        "model": "ae2:block/hz_part/cable_interface_status_has_channel",
+        "y": 90
+      }
+    },
+    {
+      "when": {
+        "facing": "up",
+        "powered": "false",
+        "x_front": "false"
+      },
+      "apply": {
+        "model": "ae2:block/hz_part/cable_interface",
+        "x": 270
+      }
+    },
+    {
+      "when": {
+        "facing": "up",
+        "powered": "false",
+        "x_front": "false"
+      },
+      "apply": {
+        "model": "ae2:block/hz_part/cable_interface_status_off",
+        "x": 270
+      }
+    },
+    {
+      "when": {
+        "facing": "up",
+        "powered": "true",
+        "x_front": "false"
+      },
+      "apply": {
+        "model": "ae2:block/hz_part/cable_interface",
+        "x": 270
+      }
+    },
+    {
+      "when": {
+        "facing": "up",
+        "powered": "true",
+        "with_channel": "false",
+        "x_front": "false"
+      },
+      "apply": {
+        "model": "ae2:block/hz_part/cable_interface_status_on",
+        "x": 270
+      }
+    },
+    {
+      "when": {
+        "facing": "up",
+        "powered": "true",
+        "with_channel": "true",
+        "x_front": "false"
+      },
+      "apply": {
+        "model": "ae2:block/hz_part/cable_interface_status_has_channel",
+        "x": 270
+      }
+    },
+    {
+      "when": {
+        "facing": "down",
+        "powered": "false",
+        "x_front": "false"
+      },
+      "apply": {
+        "model": "ae2:block/hz_part/cable_interface",
+        "x": 90
+      }
+    },
+    {
+      "when": {
+        "facing": "down",
+        "powered": "false",
+        "x_front": "false"
+      },
+      "apply": {
+        "model": "ae2:block/hz_part/cable_interface_status_off",
+        "x": 90
+      }
+    },
+    {
+      "when": {
+        "facing": "down",
+        "powered": "true",
+        "x_front": "false"
+      },
+      "apply": {
+        "model": "ae2:block/hz_part/cable_interface",
+        "x": 90
+      }
+    },
+    {
+      "when": {
+        "facing": "down",
+        "powered": "true",
+        "with_channel": "false",
+        "x_front": "false"
+      },
+      "apply": {
+        "model": "ae2:block/hz_part/cable_interface_status_on",
+        "x": 90
+      }
+    },
+    {
+      "when": {
+        "facing": "down",
+        "powered": "true",
+        "with_channel": "true",
+        "x_front": "false"
+      },
+      "apply": {
+        "model": "ae2:block/hz_part/cable_interface_status_has_channel",
+        "x": 90
+      }
+    },
+    {
+      "when": {
+        "facing": "south",
+        "powered": "false",
+        "x_front": "true"
+      },
+      "apply": {
+        "model": "ae2:block/hz_part/cable_interface"
+      }
+    },
+    {
+      "when": {
+        "facing": "south",
+        "powered": "false",
+        "x_front": "true"
+      },
+      "apply": {
+        "model": "ae2:block/hz_part/cable_interface_status_off"
+      }
+    },
+    {
+      "when": {
+        "facing": "south",
+        "powered": "true",
+        "x_front": "true"
+      },
+      "apply": {
+        "model": "ae2:block/hz_part/cable_interface"
+      }
+    },
+    {
+      "when": {
+        "facing": "south",
+        "powered": "true",
+        "with_channel": "false",
+        "x_front": "true"
+      },
+      "apply": {
+        "model": "ae2:block/hz_part/cable_interface_status_on"
+      }
+    },
+    {
+      "when": {
+        "facing": "south",
+        "powered": "true",
+        "with_channel": "true",
+        "x_front": "true"
+      },
+      "apply": {
+        "model": "ae2:block/hz_part/cable_interface_status_has_channel"
+      }
+    },
+    {
+      "when": {
+        "facing": "north",
+        "powered": "false",
+        "x_front": "true"
+      },
+      "apply": {
+        "model": "ae2:block/hz_part/cable_interface",
+        "y": 180
+      }
+    },
+    {
+      "when": {
+        "facing": "north",
+        "powered": "false",
+        "x_front": "true"
+      },
+      "apply": {
+        "model": "ae2:block/hz_part/cable_interface_status_off",
+        "y": 180
+      }
+    },
+    {
+      "when": {
+        "facing": "north",
+        "powered": "true",
+        "x_front": "true"
+      },
+      "apply": {
+        "model": "ae2:block/hz_part/cable_interface",
+        "y": 180
+      }
+    },
+    {
+      "when": {
+        "facing": "north",
+        "powered": "true",
+        "with_channel": "false",
+        "x_front": "true"
+      },
+      "apply": {
+        "model": "ae2:block/hz_part/cable_interface_status_on",
+        "y": 180
+      }
+    },
+    {
+      "when": {
+        "facing": "north",
+        "powered": "true",
+        "with_channel": "true",
+        "x_front": "true"
+      },
+      "apply": {
+        "model": "ae2:block/hz_part/cable_interface_status_has_channel",
+        "y": 180
+      }
+    },
+    {
+      "when": {
+        "facing": "east",
+        "powered": "false",
+        "x_front": "true"
+      },
+      "apply": {
+        "model": "ae2:block/hz_part/cable_interface",
+        "y": 270
+      }
+    },
+    {
+      "when": {
+        "facing": "east",
+        "powered": "false",
+        "x_front": "true"
+      },
+      "apply": {
+        "model": "ae2:block/hz_part/cable_interface_status_off",
+        "y": 270
+      }
+    },
+    {
+      "when": {
+        "facing": "east",
+        "powered": "true",
+        "x_front": "true"
+      },
+      "apply": {
+        "model": "ae2:block/hz_part/cable_interface",
+        "y": 270
+      }
+    },
+    {
+      "when": {
+        "facing": "east",
+        "powered": "true",
+        "with_channel": "false",
+        "x_front": "true"
+      },
+      "apply": {
+        "model": "ae2:block/hz_part/cable_interface_status_on",
+        "y": 270
+      }
+    },
+    {
+      "when": {
+        "facing": "east",
+        "powered": "true",
+        "with_channel": "true",
+        "x_front": "true"
+      },
+      "apply": {
+        "model": "ae2:block/hz_part/cable_interface_status_has_channel",
+        "y": 270
+      }
+    },
+    {
+      "when": {
+        "facing": "west",
+        "powered": "false",
+        "x_front": "true"
+      },
+      "apply": {
+        "model": "ae2:block/hz_part/cable_interface",
+        "y": 90
+      }
+    },
+    {
+      "when": {
+        "facing": "west",
+        "powered": "false",
+        "x_front": "true"
+      },
+      "apply": {
+        "model": "ae2:block/hz_part/cable_interface_status_off",
+        "y": 90
+      }
+    },
+    {
+      "when": {
+        "facing": "west",
+        "powered": "true",
+        "x_front": "true"
+      },
+      "apply": {
+        "model": "ae2:block/hz_part/cable_interface",
+        "y": 90
+      }
+    },
+    {
+      "when": {
+        "facing": "west",
+        "powered": "true",
+        "with_channel": "false",
+        "x_front": "true"
+      },
+      "apply": {
+        "model": "ae2:block/hz_part/cable_interface_status_on",
+        "y": 90
+      }
+    },
+    {
+      "when": {
+        "facing": "west",
+        "powered": "true",
+        "with_channel": "true",
+        "x_front": "true"
+      },
+      "apply": {
+        "model": "ae2:block/hz_part/cable_interface_status_has_channel",
+        "y": 90
+      }
+    },
+    {
+      "when": {
+        "facing": "down",
+        "powered": "false",
+        "x_front": "true"
+      },
+      "apply": {
+        "model": "ae2:block/hz_part/cable_interface",
+        "x": 270
+      }
+    },
+    {
+      "when": {
+        "facing": "down",
+        "powered": "false",
+        "x_front": "true"
+      },
+      "apply": {
+        "model": "ae2:block/hz_part/cable_interface_status_off",
+        "x": 270
+      }
+    },
+    {
+      "when": {
+        "facing": "down",
+        "powered": "true",
+        "x_front": "true"
+      },
+      "apply": {
+        "model": "ae2:block/hz_part/cable_interface",
+        "x": 270
+      }
+    },
+    {
+      "when": {
+        "facing": "down",
+        "powered": "true",
+        "with_channel": "false",
+        "x_front": "true"
+      },
+      "apply": {
+        "model": "ae2:block/hz_part/cable_interface_status_on",
+        "x": 270
+      }
+    },
+    {
+      "when": {
+        "facing": "down",
+        "powered": "true",
+        "with_channel": "true",
+        "x_front": "true"
+      },
+      "apply": {
+        "model": "ae2:block/hz_part/cable_interface_status_has_channel",
+        "x": 270
+      }
+    },
+    {
+      "when": {
+        "facing": "up",
+        "powered": "false",
+        "x_front": "true"
+      },
+      "apply": {
+        "model": "ae2:block/hz_part/cable_interface",
+        "x": 90
+      }
+    },
+    {
+      "when": {
+        "facing": "up",
+        "powered": "false",
+        "x_front": "true"
+      },
+      "apply": {
+        "model": "ae2:block/hz_part/cable_interface_status_off",
+        "x": 90
+      }
+    },
+    {
+      "when": {
+        "facing": "up",
+        "powered": "true",
+        "x_front": "true"
+      },
+      "apply": {
+        "model": "ae2:block/hz_part/cable_interface",
+        "x": 90
+      }
+    },
+    {
+      "when": {
+        "facing": "up",
+        "powered": "true",
+        "with_channel": "false",
+        "x_front": "true"
+      },
+      "apply": {
+        "model": "ae2:block/hz_part/cable_interface_status_on",
+        "x": 90
+      }
+    },
+    {
+      "when": {
+        "facing": "up",
+        "powered": "true",
+        "with_channel": "true",
+        "x_front": "true"
+      },
+      "apply": {
+        "model": "ae2:block/hz_part/cable_interface_status_has_channel",
+        "x": 90
+      }
+    }
+  ]
+}

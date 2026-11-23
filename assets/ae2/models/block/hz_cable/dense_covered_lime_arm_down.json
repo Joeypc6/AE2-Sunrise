@@ -1,0 +1,67 @@
+{
+  "textures": {
+    "base": "ae2:block/part/cable/dense_covered/lime",
+    "particle": "ae2:block/part/cable/dense_covered/lime"
+  },
+  "elements": [
+    {
+      "from": [
+        4,
+        0,
+        4
+      ],
+      "to": [
+        12,
+        5,
+        12
+      ],
+      "faces": {
+        "up": {
+          "texture": "#base",
+          "uv": [
+            4,
+            4,
+            12,
+            12
+          ]
+        },
+        "north": {
+          "texture": "#base",
+          "uv": [
+            4,
+            11,
+            12,
+            16
+          ]
+        },
+        "south": {
+          "texture": "#base",
+          "uv": [
+            4,
+            11,
+            12,
+            16
+          ]
+        },
+        "west": {
+          "texture": "#base",
+          "uv": [
+            4,
+            11,
+            12,
+            16
+          ]
+        },
+        "east": {
+          "texture": "#base",
+          "uv": [
+            4,
+            11,
+            12,
+            16
+          ]
+        }
+      }
+    }
+  ]
+}

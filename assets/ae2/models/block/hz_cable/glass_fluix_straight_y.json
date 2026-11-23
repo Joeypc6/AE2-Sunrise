@@ -1,0 +1,58 @@
+{
+  "textures": {
+    "base": "ae2:block/part/cable/glass/transparent",
+    "particle": "ae2:block/part/cable/glass/transparent"
+  },
+  "elements": [
+    {
+      "from": [
+        6,
+        0,
+        6
+      ],
+      "to": [
+        10,
+        16,
+        10
+      ],
+      "faces": {
+        "north": {
+          "texture": "#base",
+          "uv": [
+            6,
+            0,
+            10,
+            16
+          ]
+        },
+        "south": {
+          "texture": "#base",
+          "uv": [
+            6,
+            0,
+            10,
+            16
+          ]
+        },
+        "west": {
+          "texture": "#base",
+          "uv": [
+            6,
+            0,
+            10,
+            16
+          ]
+        },
+        "east": {
+          "texture": "#base",
+          "uv": [
+            6,
+            0,
+            10,
+            16
+          ]
+        }
+      }
+    }
+  ]
+}

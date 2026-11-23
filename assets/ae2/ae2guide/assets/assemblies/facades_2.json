@@ -1,0 +1,98 @@
+{
+  "blocks": [
+    [
+      0,
+      0,
+      0,
+      "ae2:blue_smart_cable",
+      {
+        "north": "false",
+        "south": "false",
+        "east": "true",
+        "west": "true",
+        "up": "true",
+        "down": "false"
+      },
+      {
+        "entity": "ae2:smart_cable",
+        "nbt": "{lights:2236962}"
+      }
+    ],
+    [
+      0,
+      1,
+      0,
+      "ae2:storage_bus",
+      {
+        "facing": "up",
+        "powered": "true",
+        "with_channel": "true"
+      }
+    ],
+    [
+      0,
+      1,
+      0,
+      "ae2:blue_smart_cable",
+      {
+        "north": "false",
+        "south": "false",
+        "east": "false",
+        "west": "false",
+        "up": "false",
+        "down": "true"
+      },
+      {
+        "entity": "ae2:smart_cable",
+        "nbt": "{lights:2236962}"
+      }
+    ],
+    [
+      -1,
+      0,
+      0,
+      "ae2:cable_pattern_provider",
+      {
+        "facing": "west",
+        "powered": "true",
+        "with_channel": "true"
+      }
+    ],
+    [
+      1,
+      0,
+      0,
+      "ae2:blue_smart_cable",
+      {
+        "north": "false",
+        "south": "false",
+        "east": "true",
+        "west": "true",
+        "up": "false",
+        "down": "false"
+      },
+      {
+        "entity": "ae2:smart_cable",
+        "nbt": "{lights:2236962}"
+      }
+    ],
+    [
+      2,
+      0,
+      0,
+      "ae2:blue_smart_cable",
+      {
+        "north": "false",
+        "south": "false",
+        "east": "false",
+        "west": "true",
+        "up": "false",
+        "down": "false"
+      },
+      {
+        "entity": "ae2:smart_cable",
+        "nbt": "{lights:2236962}"
+      }
+    ]
+  ]
+}

@@ -1,0 +1,8 @@
+{
+  "amount": 2,
+  "random_sequence": "ae2:trade_set/fluix_researcher/level_1",
+  "trades": [
+    "ae2:fluix_researcher/1/certus_quartz_crystal",
+    "ae2:fluix_researcher/1/meteorite_compass"
+  ]
+}

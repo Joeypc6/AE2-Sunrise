@@ -1,0 +1,96 @@
+{
+  "variants": {
+    "facing=north,powered=false,x_front=false": {
+      "model": "ae2:block/hz_part/level_emitter_off"
+    },
+    "facing=south,powered=false,x_front=false": {
+      "model": "ae2:block/hz_part/level_emitter_off",
+      "y": 180
+    },
+    "facing=west,powered=false,x_front=false": {
+      "model": "ae2:block/hz_part/level_emitter_off",
+      "y": 270
+    },
+    "facing=east,powered=false,x_front=false": {
+      "model": "ae2:block/hz_part/level_emitter_off",
+      "y": 90
+    },
+    "facing=up,powered=false,x_front=false": {
+      "model": "ae2:block/hz_part/level_emitter_off",
+      "x": 270
+    },
+    "facing=down,powered=false,x_front=false": {
+      "model": "ae2:block/hz_part/level_emitter_off",
+      "x": 90
+    },
+    "facing=north,powered=true,x_front=false": {
+      "model": "ae2:block/hz_part/level_emitter_on"
+    },
+    "facing=south,powered=true,x_front=false": {
+      "model": "ae2:block/hz_part/level_emitter_on",
+      "y": 180
+    },
+    "facing=west,powered=true,x_front=false": {
+      "model": "ae2:block/hz_part/level_emitter_on",
+      "y": 270
+    },
+    "facing=east,powered=true,x_front=false": {
+      "model": "ae2:block/hz_part/level_emitter_on",
+      "y": 90
+    },
+    "facing=up,powered=true,x_front=false": {
+      "model": "ae2:block/hz_part/level_emitter_on",
+      "x": 270
+    },
+    "facing=down,powered=true,x_front=false": {
+      "model": "ae2:block/hz_part/level_emitter_on",
+      "x": 90
+    },
+    "facing=south,powered=false,x_front=true": {
+      "model": "ae2:block/hz_part/level_emitter_off"
+    },
+    "facing=north,powered=false,x_front=true": {
+      "model": "ae2:block/hz_part/level_emitter_off",
+      "y": 180
+    },
+    "facing=east,powered=false,x_front=true": {
+      "model": "ae2:block/hz_part/level_emitter_off",
+      "y": 270
+    },
+    "facing=west,powered=false,x_front=true": {
+      "model": "ae2:block/hz_part/level_emitter_off",
+      "y": 90
+    },
+    "facing=down,powered=false,x_front=true": {
+      "model": "ae2:block/hz_part/level_emitter_off",
+      "x": 270
+    },
+    "facing=up,powered=false,x_front=true": {
+      "model": "ae2:block/hz_part/level_emitter_off",
+      "x": 90
+    },
+    "facing=south,powered=true,x_front=true": {
+      "model": "ae2:block/hz_part/level_emitter_on"
+    },
+    "facing=north,powered=true,x_front=true": {
+      "model": "ae2:block/hz_part/level_emitter_on",
+      "y": 180
+    },
+    "facing=east,powered=true,x_front=true": {
+      "model": "ae2:block/hz_part/level_emitter_on",
+      "y": 270
+    },
+    "facing=west,powered=true,x_front=true": {
+      "model": "ae2:block/hz_part/level_emitter_on",
+      "y": 90
+    },
+    "facing=down,powered=true,x_front=true": {
+      "model": "ae2:block/hz_part/level_emitter_on",
+      "x": 270
+    },
+    "facing=up,powered=true,x_front=true": {
+      "model": "ae2:block/hz_part/level_emitter_on",
+      "x": 90
+    }
+  }
+}

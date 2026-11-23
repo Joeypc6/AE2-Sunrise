@@ -1,0 +1,99 @@
+{
+  "template": "minecraft:beacon",
+  "properties": {
+    "hardness": 0.0,
+    "light": 0,
+    "sounds": "minecraft:shulker_box",
+    "explosion_resistance": 2.0
+  },
+  "state_properties": {
+    "odd": {
+      "type": "boolean"
+    },
+    "facing": {
+      "type": "enum",
+      "values": [
+        "down",
+        "up",
+        "north",
+        "south",
+        "west",
+        "east"
+      ]
+    }
+  },
+  "default_state": {
+    "odd": "false",
+    "facing": "up"
+  },
+  "shapes": {
+    "values": {
+      "north": [
+        [
+          0.3,
+          0.3,
+          0.6,
+          0.7,
+          0.7,
+          1.0
+        ]
+      ],
+      "south": [
+        [
+          0.3,
+          0.3,
+          0.0,
+          0.7,
+          0.7,
+          0.4
+        ]
+      ],
+      "west": [
+        [
+          0.6,
+          0.3,
+          0.3,
+          1.0,
+          0.7,
+          0.7
+        ]
+      ],
+      "east": [
+        [
+          0.0,
+          0.3,
+          0.3,
+          0.4,
+          0.7,
+          0.7
+        ]
+      ],
+      "up": [
+        [
+          0.3,
+          0.0,
+          0.3,
+          0.7,
+          0.4,
+          0.7
+        ]
+      ],
+      "down": [
+        [
+          0.3,
+          0.6,
+          0.3,
+          0.7,
+          1.0,
+          0.7
+        ]
+      ]
+    },
+    "properties": [
+      "facing"
+    ]
+  },
+  "components": {
+    "minecraft:max_stack_size": 64
+  }
+}

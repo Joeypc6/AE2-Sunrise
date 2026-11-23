@@ -1,0 +1,352 @@
+{
+  "multipart": [
+    {
+      "when": {
+        "down": "true",
+        "up": "true",
+        "north": "false",
+        "south": "false",
+        "west": "false",
+        "east": "false",
+        "x_core": "false"
+      },
+      "apply": {
+        "model": "ae2:block/hz_cable/dense_covered_brown_straight_y"
+      }
+    },
+    {
+      "when": {
+        "down": "false",
+        "up": "false",
+        "north": "true",
+        "south": "true",
+        "west": "false",
+        "east": "false",
+        "x_core": "false"
+      },
+      "apply": {
+        "model": "ae2:block/hz_cable/dense_covered_brown_straight_z"
+      }
+    },
+    {
+      "when": {
+        "down": "false",
+        "up": "false",
+        "north": "false",
+        "south": "false",
+        "west": "true",
+        "east": "true",
+        "x_core": "false"
+      },
+      "apply": {
+        "model": "ae2:block/hz_cable/dense_covered_brown_straight_x"
+      }
+    },
+    {
+      "when": {
+        "AND": [
+          {
+            "down": "true"
+          },
+          {
+            "OR": [
+              {
+                "down": "false"
+              },
+              {
+                "up": "false"
+              },
+              {
+                "north": "true"
+              },
+              {
+                "south": "true"
+              },
+              {
+                "west": "true"
+              },
+              {
+                "east": "true"
+              },
+              {
+                "x_core": "true"
+              }
+            ]
+          }
+        ]
+      },
+      "apply": {
+        "model": "ae2:block/hz_cable/dense_covered_brown_arm_down"
+      }
+    },
+    {
+      "when": {
+        "AND": [
+          {
+            "up": "true"
+          },
+          {
+            "OR": [
+              {
+                "down": "false"
+              },
+              {
+                "up": "false"
+              },
+              {
+                "north": "true"
+              },
+              {
+                "south": "true"
+              },
+              {
+                "west": "true"
+              },
+              {
+                "east": "true"
+              },
+              {
+                "x_core": "true"
+              }
+            ]
+          }
+        ]
+      },
+      "apply": {
+        "model": "ae2:block/hz_cable/dense_covered_brown_arm_up"
+      }
+    },
+    {
+      "when": {
+        "AND": [
+          {
+            "north": "true"
+          },
+          {
+            "OR": [
+              {
+                "north": "false"
+              },
+              {
+                "south": "false"
+              },
+              {
+                "down": "true"
+              },
+              {
+                "up": "true"
+              },
+              {
+                "west": "true"
+              },
+              {
+                "east": "true"
+              },
+              {
+                "x_core": "true"
+              }
+            ]
+          }
+        ]
+      },
+      "apply": {
+        "model": "ae2:block/hz_cable/dense_covered_brown_arm_north"
+      }
+    },
+    {
+      "when": {
+        "AND": [
+          {
+            "south": "true"
+          },
+          {
+            "OR": [
+              {
+                "north": "false"
+              },
+              {
+                "south": "false"
+              },
+              {
+                "down": "true"
+              },
+              {
+                "up": "true"
+              },
+              {
+                "west": "true"
+              },
+              {
+                "east": "true"
+              },
+              {
+                "x_core": "true"
+              }
+            ]
+          }
+        ]
+      },
+      "apply": {
+        "model": "ae2:block/hz_cable/dense_covered_brown_arm_south"
+      }
+    },
+    {
+      "when": {
+        "AND": [
+          {
+            "west": "true"
+          },
+          {
+            "OR": [
+              {
+                "west": "false"
+              },
+              {
+                "east": "false"
+              },
+              {
+                "down": "true"
+              },
+              {
+                "up": "true"
+              },
+              {
+                "north": "true"
+              },
+              {
+                "south": "true"
+              },
+              {
+                "x_core": "true"
+              }
+            ]
+          }
+        ]
+      },
+      "apply": {
+        "model": "ae2:block/hz_cable/dense_covered_brown_arm_west"
+      }
+    },
+    {
+      "when": {
+        "AND": [
+          {
+            "east": "true"
+          },
+          {
+            "OR": [
+              {
+                "west": "false"
+              },
+              {
+                "east": "false"
+              },
+              {
+                "down": "true"
+              },
+              {
+                "up": "true"
+              },
+              {
+                "north": "true"
+              },
+              {
+                "south": "true"
+              },
+              {
+                "x_core": "true"
+              }
+            ]
+          }
+        ]
+      },
+      "apply": {
+        "model": "ae2:block/hz_cable/dense_covered_brown_arm_east"
+      }
+    },
+    {
+      "when": {
+        "AND": [
+          {
+            "OR": [
+              {
+                "down": "false"
+              },
+              {
+                "up": "false"
+              },
+              {
+                "north": "true"
+              },
+              {
+                "south": "true"
+              },
+              {
+                "west": "true"
+              },
+              {
+                "east": "true"
+              },
+              {
+                "x_core": "true"
+              }
+            ]
+          },
+          {
+            "OR": [
+              {
+                "north": "false"
+              },
+              {
+                "south": "false"
+              },
+              {
+                "down": "true"
+              },
+              {
+                "up": "true"
+              },
+              {
+                "west": "true"
+              },
+              {
+                "east": "true"
+              },
+              {
+                "x_core": "true"
+              }
+            ]
+          },
+          {
+            "OR": [
+              {
+                "west": "false"
+              },
+              {
+                "east": "false"
+              },
+              {
+                "down": "true"
+              },
+              {
+                "up": "true"
+              },
+              {
+                "north": "true"
+              },
+              {
+                "south": "true"
+              },
+              {
+                "x_core": "true"
+              }
+            ]
+          }
+        ]
+      },
+      "apply": {
+        "model": "ae2:block/hz_cable/dense_covered_brown_core"
+      }
+    }
+  ]
+}

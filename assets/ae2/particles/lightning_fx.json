@@ -1,0 +1,10 @@
+{
+  "textures": ["minecraft:generic_0"],
+  "sunrise:behaviour": {
+    "velocity": [0.0, 0.0, 0.0],
+    "gravity": 0.0,
+    "friction": 1.0,
+    "lifetime": 3,
+    "size": [0.06, 0.03]
+  }
+}

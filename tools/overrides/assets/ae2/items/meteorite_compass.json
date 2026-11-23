@@ -1,0 +1,124 @@
+{
+  "model": {
+    "type": "minecraft:range_dispatch",
+    "property": "ae2:compass",
+    "entries": [
+      {
+        "threshold": 0.0,
+        "model": {
+          "type": "minecraft:model",
+          "model": "ae2:item/hz/compass_full_0"
+        }
+      },
+      {
+        "threshold": 1.0,
+        "model": {
+          "type": "minecraft:model",
+          "model": "ae2:item/hz/compass_full_1"
+        }
+      },
+      {
+        "threshold": 2.0,
+        "model": {
+          "type": "minecraft:model",
+          "model": "ae2:item/hz/compass_full_2"
+        }
+      },
+      {
+        "threshold": 3.0,
+        "model": {
+          "type": "minecraft:model",
+          "model": "ae2:item/hz/compass_full_3"
+        }
+      },
+      {
+        "threshold": 4.0,
+        "model": {
+          "type": "minecraft:model",
+          "model": "ae2:item/hz/compass_full_4"
+        }
+      },
+      {
+        "threshold": 5.0,
+        "model": {
+          "type": "minecraft:model",
+          "model": "ae2:item/hz/compass_full_5"
+        }
+      },
+      {
+        "threshold": 6.0,
+        "model": {
+          "type": "minecraft:model",
+          "model": "ae2:item/hz/compass_full_6"
+        }
+      },
+      {
+        "threshold": 7.0,
+        "model": {
+          "type": "minecraft:model",
+          "model": "ae2:item/hz/compass_full_7"
+        }
+      },
+      {
+        "threshold": 8.0,
+        "model": {
+          "type": "minecraft:model",
+          "model": "ae2:item/hz/compass_full_8"
+        }
+      },
+      {
+        "threshold": 9.0,
+        "model": {
+          "type": "minecraft:model",
+          "model": "ae2:item/hz/compass_full_9"
+        }
+      },
+      {
+        "threshold": 10.0,
+        "model": {
+          "type": "minecraft:model",
+          "model": "ae2:item/hz/compass_full_10"
+        }
+      },
+      {
+        "threshold": 11.0,
+        "model": {
+          "type": "minecraft:model",
+          "model": "ae2:item/hz/compass_full_11"
+        }
+      },
+      {
+        "threshold": 12.0,
+        "model": {
+          "type": "minecraft:model",
+          "model": "ae2:item/hz/compass_full_12"
+        }
+      },
+      {
+        "threshold": 13.0,
+        "model": {
+          "type": "minecraft:model",
+          "model": "ae2:item/hz/compass_full_13"
+        }
+      },
+      {
+        "threshold": 14.0,
+        "model": {
+          "type": "minecraft:model",
+          "model": "ae2:item/hz/compass_full_14"
+        }
+      },
+      {
+        "threshold": 15.0,
+        "model": {
+          "type": "minecraft:model",
+          "model": "ae2:item/hz/compass_full_15"
+        }
+      }
+    ],
+    "fallback": {
+      "type": "minecraft:model",
+      "model": "ae2:item/meteorite_compass"
+    }
+  }
+}

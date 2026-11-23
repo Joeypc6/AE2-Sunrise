@@ -1,0 +1,39 @@
+{
+  "id": "ae2:charger",
+  "title": "block.ae2.charger",
+  "icon": "ae2:charger",
+  "catalysts": [
+    "ae2:charger",
+    "ae2:crank"
+  ],
+  "recipe_type": "ae2:charger",
+  "size": [
+    130,
+    50
+  ],
+  "arrow": [
+    52,
+    8
+  ],
+  "slots": [
+    {
+      "x": 31,
+      "y": 8,
+      "role": "input",
+      "path": "ingredient"
+    },
+    {
+      "x": 81,
+      "y": 8,
+      "role": "output",
+      "path": "result"
+    }
+  ],
+  "texts": [
+    {
+      "x": 3,
+      "y": 36,
+      "text": "10 turns or 1600 AE"
+    }
+  ]
+}

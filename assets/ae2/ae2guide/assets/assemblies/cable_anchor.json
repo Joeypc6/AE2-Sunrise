@@ -1,0 +1,182 @@
+{
+  "blocks": [
+    [
+      0,
+      0,
+      0,
+      "ae2:green_smart_cable",
+      {
+        "north": "false",
+        "south": "false",
+        "east": "true",
+        "west": "false",
+        "up": "true",
+        "down": "false"
+      },
+      {
+        "entity": "ae2:smart_cable",
+        "nbt": "{lights:1118481}"
+      }
+    ],
+    [
+      1,
+      0,
+      0,
+      "ae2:green_smart_cable",
+      {
+        "north": "false",
+        "south": "false",
+        "east": "true",
+        "west": "true",
+        "up": "true",
+        "down": "false"
+      },
+      {
+        "entity": "ae2:smart_cable",
+        "nbt": "{lights:1118481}"
+      }
+    ],
+    [
+      1,
+      1,
+      0,
+      "ae2:cable_anchor",
+      {
+        "facing": "up",
+        "powered": "true",
+        "with_channel": "true"
+      }
+    ],
+    [
+      2,
+      0,
+      0,
+      "ae2:green_smart_cable",
+      {
+        "north": "false",
+        "south": "false",
+        "east": "true",
+        "west": "true",
+        "up": "true",
+        "down": "false"
+      },
+      {
+        "entity": "ae2:smart_cable",
+        "nbt": "{lights:1118481}"
+      }
+    ],
+    [
+      2,
+      1,
+      0,
+      "ae2:cable_anchor",
+      {
+        "facing": "up",
+        "powered": "true",
+        "with_channel": "true"
+      }
+    ],
+    [
+      3,
+      0,
+      0,
+      "ae2:green_smart_cable",
+      {
+        "north": "false",
+        "south": "false",
+        "east": "false",
+        "west": "true",
+        "up": "false",
+        "down": "false"
+      },
+      {
+        "entity": "ae2:smart_cable",
+        "nbt": "{lights:1118481}"
+      }
+    ],
+    [
+      0,
+      1,
+      0,
+      "ae2:pattern_provider",
+      {
+        "push_direction": "all"
+      }
+    ],
+    [
+      1,
+      1,
+      0,
+      "ae2:green_smart_cable",
+      {
+        "north": "false",
+        "south": "false",
+        "east": "true",
+        "west": "true",
+        "up": "false",
+        "down": "true"
+      }
+    ],
+    [
+      1,
+      0,
+      0,
+      "ae2:cable_anchor",
+      {
+        "facing": "down",
+        "powered": "true",
+        "with_channel": "true"
+      }
+    ],
+    [
+      0,
+      1,
+      0,
+      "ae2:cable_anchor",
+      {
+        "facing": "west",
+        "powered": "true",
+        "with_channel": "true"
+      }
+    ],
+    [
+      2,
+      1,
+      0,
+      "ae2:green_smart_cable",
+      {
+        "north": "false",
+        "south": "false",
+        "east": "true",
+        "west": "true",
+        "up": "false",
+        "down": "false"
+      }
+    ],
+    [
+      3,
+      1,
+      0,
+      "ae2:green_smart_cable",
+      {
+        "north": "false",
+        "south": "false",
+        "east": "false",
+        "west": "true",
+        "up": "false",
+        "down": "true"
+      }
+    ],
+    [
+      3,
+      0,
+      0,
+      "ae2:cable_anchor",
+      {
+        "facing": "down",
+        "powered": "true",
+        "with_channel": "true"
+      }
+    ]
+  ]
+}

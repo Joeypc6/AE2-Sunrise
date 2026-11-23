@@ -1,0 +1,6 @@
+Applied Energistics 2 for Sunrise is a port of Applied Energistics 2 15.4.14 by TeamAppliedEnergistics
+(https://github.com/AppliedEnergistics/Applied-Energistics-2). AE2's code is under the GNU Lesser General Public License
+v3.0, and this port is a modified version under the same licence (LICENSE, and COPYING.GPL-3.0 for the GPL-3.0 it
+builds on). The Rust code is a rewrite for Sunrise; no original Java code runs. AE2's textures, models, sounds and
+guide are under Creative Commons Attribution-NonCommercial-ShareAlike 3.0 Unported
+(https://creativecommons.org/licenses/by-nc-sa/3.0/), as in the original.

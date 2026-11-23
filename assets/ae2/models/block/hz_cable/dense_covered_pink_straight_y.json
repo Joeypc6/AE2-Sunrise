@@ -1,0 +1,77 @@
+{
+  "textures": {
+    "base": "ae2:block/part/cable/dense_covered/pink",
+    "particle": "ae2:block/part/cable/dense_covered/pink"
+  },
+  "elements": [
+    {
+      "from": [
+        3,
+        -0.01,
+        3
+      ],
+      "to": [
+        13,
+        16.01,
+        13
+      ],
+      "faces": {
+        "down": {
+          "texture": "#base",
+          "uv": [
+            3,
+            3,
+            13,
+            13
+          ]
+        },
+        "up": {
+          "texture": "#base",
+          "uv": [
+            3,
+            3,
+            13,
+            13
+          ]
+        },
+        "north": {
+          "texture": "#base",
+          "uv": [
+            3,
+            3,
+            13,
+            0
+          ]
+        },
+        "south": {
+          "texture": "#base",
+          "uv": [
+            3,
+            3,
+            13,
+            0
+          ]
+        },
+        "west": {
+          "texture": "#base",
+          "uv": [
+            3,
+            3,
+            13,
+            0
+          ]
+        },
+        "east": {
+          "texture": "#base",
+          "uv": [
+            3,
+            3,
+            13,
+            0
+          ],
+          "rotation": 180
+        }
+      }
+    }
+  ]
+}

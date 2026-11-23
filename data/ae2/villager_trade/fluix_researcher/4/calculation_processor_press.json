@@ -1,0 +1,13 @@
+{
+  "wants": {
+    "id": "minecraft:emerald",
+    "count": 10
+  },
+  "gives": {
+    "id": "ae2:calculation_processor_press",
+    "count": 1
+  },
+  "max_uses": 12,
+  "xp": 20,
+  "reputation_discount": 0.05
+}

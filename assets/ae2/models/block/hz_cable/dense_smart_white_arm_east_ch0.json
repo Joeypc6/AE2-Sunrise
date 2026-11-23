@@ -1,0 +1,128 @@
+{
+  "textures": {
+    "base": "ae2:block/part/cable/dense_smart/white",
+    "particle": "ae2:block/part/cable/dense_smart/white",
+    "channels": "ae2:block/hz_cable/dense_smart_white_ch0"
+  },
+  "elements": [
+    {
+      "from": [
+        11,
+        4,
+        4
+      ],
+      "to": [
+        16,
+        12,
+        12
+      ],
+      "faces": {
+        "down": {
+          "texture": "#base",
+          "uv": [
+            11,
+            12,
+            16,
+            4
+          ]
+        },
+        "up": {
+          "texture": "#base",
+          "uv": [
+            11,
+            4,
+            16,
+            12
+          ]
+        },
+        "north": {
+          "texture": "#base",
+          "uv": [
+            0,
+            4,
+            5,
+            12
+          ]
+        },
+        "south": {
+          "texture": "#base",
+          "uv": [
+            11,
+            4,
+            16,
+            12
+          ]
+        },
+        "west": {
+          "texture": "#base",
+          "uv": [
+            4,
+            4,
+            12,
+            12
+          ]
+        }
+      }
+    },
+    {
+      "from": [
+        10.99,
+        3.99,
+        3.99
+      ],
+      "to": [
+        16.01,
+        12.01,
+        12.01
+      ],
+      "faces": {
+        "down": {
+          "texture": "#channels",
+          "uv": [
+            11,
+            12,
+            16,
+            4
+          ]
+        },
+        "up": {
+          "texture": "#channels",
+          "uv": [
+            11,
+            4,
+            16,
+            12
+          ]
+        },
+        "north": {
+          "texture": "#channels",
+          "uv": [
+            0,
+            4,
+            5,
+            12
+          ]
+        },
+        "south": {
+          "texture": "#channels",
+          "uv": [
+            11,
+            4,
+            16,
+            12
+          ]
+        },
+        "west": {
+          "texture": "#channels",
+          "uv": [
+            4,
+            4,
+            12,
+            12
+          ]
+        }
+      },
+      "light_emission": 15
+    }
+  ]
+}

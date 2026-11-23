@@ -1,0 +1,13 @@
+{
+  "wants": {
+    "id": "minecraft:emerald",
+    "count": 5
+  },
+  "gives": {
+    "id": "ae2:fluix_crystal",
+    "count": 4
+  },
+  "max_uses": 12,
+  "xp": 14,
+  "reputation_discount": 0.05
+}

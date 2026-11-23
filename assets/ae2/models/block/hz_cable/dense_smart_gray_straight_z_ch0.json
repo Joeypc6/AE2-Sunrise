@@ -1,0 +1,150 @@
+{
+  "textures": {
+    "base": "ae2:block/part/cable/dense_smart/gray",
+    "particle": "ae2:block/part/cable/dense_smart/gray",
+    "channels": "ae2:block/hz_cable/dense_smart_gray_ch0"
+  },
+  "elements": [
+    {
+      "from": [
+        3,
+        3,
+        -0.01
+      ],
+      "to": [
+        13,
+        13,
+        16.01
+      ],
+      "faces": {
+        "down": {
+          "texture": "#base",
+          "uv": [
+            3,
+            0,
+            13,
+            3
+          ]
+        },
+        "up": {
+          "texture": "#base",
+          "uv": [
+            3,
+            0,
+            13,
+            3
+          ]
+        },
+        "north": {
+          "texture": "#base",
+          "uv": [
+            13,
+            3,
+            3,
+            13
+          ]
+        },
+        "south": {
+          "texture": "#base",
+          "uv": [
+            3,
+            3,
+            13,
+            13
+          ]
+        },
+        "west": {
+          "texture": "#base",
+          "uv": [
+            0,
+            13,
+            3,
+            3
+          ],
+          "rotation": 180
+        },
+        "east": {
+          "texture": "#base",
+          "uv": [
+            0,
+            13,
+            3,
+            3
+          ],
+          "rotation": 180
+        }
+      }
+    },
+    {
+      "from": [
+        2.99,
+        2.99,
+        -0.02
+      ],
+      "to": [
+        13.01,
+        13.01,
+        16.02
+      ],
+      "faces": {
+        "down": {
+          "texture": "#channels",
+          "uv": [
+            3,
+            0,
+            13,
+            3
+          ]
+        },
+        "up": {
+          "texture": "#channels",
+          "uv": [
+            3,
+            0,
+            13,
+            3
+          ]
+        },
+        "north": {
+          "texture": "#channels",
+          "uv": [
+            13,
+            3,
+            3,
+            13
+          ]
+        },
+        "south": {
+          "texture": "#channels",
+          "uv": [
+            3,
+            3,
+            13,
+            13
+          ]
+        },
+        "west": {
+          "texture": "#channels",
+          "uv": [
+            0,
+            13,
+            3,
+            3
+          ],
+          "rotation": 180
+        },
+        "east": {
+          "texture": "#channels",
+          "uv": [
+            0,
+            13,
+            3,
+            3
+          ],
+          "rotation": 180
+        }
+      },
+      "light_emission": 15
+    }
+  ]
+}

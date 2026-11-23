@@ -1,0 +1,43 @@
+{
+  "id": "ae2:inscriber",
+  "title": "block.ae2.inscriber",
+  "icon": "ae2:inscriber",
+  "catalysts": [
+    "ae2:inscriber"
+  ],
+  "recipe_type": "ae2:inscriber",
+  "size": [
+    97,
+    64
+  ],
+  "arrow": [
+    44,
+    24
+  ],
+  "slots": [
+    {
+      "x": 1,
+      "y": 1,
+      "role": "input",
+      "path": "ingredients.top"
+    },
+    {
+      "x": 19,
+      "y": 24,
+      "role": "input",
+      "path": "ingredients.middle"
+    },
+    {
+      "x": 1,
+      "y": 47,
+      "role": "input",
+      "path": "ingredients.bottom"
+    },
+    {
+      "x": 69,
+      "y": 25,
+      "role": "output",
+      "path": "result"
+    }
+  ]
+}

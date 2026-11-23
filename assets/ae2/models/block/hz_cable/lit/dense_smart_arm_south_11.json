@@ -1,0 +1,73 @@
+{
+  "textures": {
+    "channels": "ae2:block/part/cable/dense_smart/channels_11",
+    "particle": "ae2:block/part/cable/dense_smart/channels_11"
+  },
+  "elements": [
+    {
+      "from": [
+        3.98,
+        3.98,
+        10.98
+      ],
+      "to": [
+        12.02,
+        12.02,
+        16.02
+      ],
+      "faces": {
+        "down": {
+          "texture": "#channels",
+          "uv": [
+            4,
+            11,
+            12,
+            16
+          ],
+          "tintindex": 0
+        },
+        "up": {
+          "texture": "#channels",
+          "uv": [
+            4,
+            11,
+            12,
+            16
+          ],
+          "tintindex": 0
+        },
+        "north": {
+          "texture": "#channels",
+          "uv": [
+            4,
+            4,
+            12,
+            12
+          ],
+          "tintindex": 0
+        },
+        "west": {
+          "texture": "#channels",
+          "uv": [
+            11,
+            4,
+            16,
+            12
+          ],
+          "tintindex": 0
+        },
+        "east": {
+          "texture": "#channels",
+          "uv": [
+            0,
+            4,
+            5,
+            12
+          ],
+          "tintindex": 0
+        }
+      },
+      "light_emission": 15
+    }
+  ]
+}

@@ -1,0 +1,78 @@
+{
+  "textures": {
+    "base": "ae2:block/part/cable/dense_covered/light_gray",
+    "particle": "ae2:block/part/cable/dense_covered/light_gray"
+  },
+  "elements": [
+    {
+      "from": [
+        -0.01,
+        3,
+        3
+      ],
+      "to": [
+        16.01,
+        13,
+        13
+      ],
+      "faces": {
+        "down": {
+          "texture": "#base",
+          "uv": [
+            0,
+            3,
+            3,
+            13
+          ]
+        },
+        "up": {
+          "texture": "#base",
+          "uv": [
+            0,
+            3,
+            3,
+            13
+          ]
+        },
+        "north": {
+          "texture": "#base",
+          "uv": [
+            0,
+            13,
+            3,
+            3
+          ],
+          "rotation": 180
+        },
+        "south": {
+          "texture": "#base",
+          "uv": [
+            0,
+            13,
+            3,
+            3
+          ],
+          "rotation": 180
+        },
+        "west": {
+          "texture": "#base",
+          "uv": [
+            3,
+            3,
+            13,
+            13
+          ]
+        },
+        "east": {
+          "texture": "#base",
+          "uv": [
+            3,
+            3,
+            13,
+            13
+          ]
+        }
+      }
+    }
+  ]
+}

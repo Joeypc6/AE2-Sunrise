@@ -1,0 +1,11 @@
+{
+  "amount": 2,
+  "random_sequence": "ae2:trade_set/fluix_researcher/level_4",
+  "trades": [
+    "ae2:fluix_researcher/4/calculation_processor_press",
+    "ae2:fluix_researcher/4/engineering_processor_press",
+    "ae2:fluix_researcher/4/logic_processor_press",
+    "ae2:fluix_researcher/4/silicon_press",
+    "ae2:fluix_researcher/4/matter_ball"
+  ]
+}
