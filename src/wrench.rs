@@ -120,25 +120,44 @@ pub(crate) fn placement_orientation(yaw: f32, pitch: f32) -> (Pos, Pos) {
 
 // ---- Placement
 
+/// The placer's look as a yaw and pitch: the player's own; a directional placement (DirectionalPlaceContext, a
+/// dispenser) looks along its direction, its horizontal direction north when that is up or down, as vanilla answers
+/// getNearestLookingDirection and getHorizontalDirection for it.
+fn placer_look(source: &PlacementSource) -> (f32, f32) {
+    match source {
+        PlacementSource::Player { yaw, pitch, .. } => (*yaw, *pitch),
+        PlacementSource::Directional { direction } => match direction {
+            Direction::Down => (180.0, 90.0),
+            Direction::Up => (180.0, -90.0),
+            Direction::North => (180.0, 0.0),
+            Direction::South => (0.0, 0.0),
+            Direction::West => (90.0, 0.0),
+            Direction::East => (-90.0, 0.0),
+        },
+        #[allow(unreachable_patterns)]
+        _ => (0.0, 0.0),
+    }
+}
+
 /// `state_for_placement` of AE2's devices: the orientation strategies' states. None leaves the block's own placement.
 pub(crate) fn placement_state(level: &dyn LevelHost, event: &StateForPlacementEvent<'_>) -> Option<Option<BlockState>> {
     let block = level.state_block(event.state)?.to_string();
     let name = block.strip_prefix("ae2:")?.to_owned();
-    let cx = event.context;
+    let (yaw, pitch) = placer_look(&event.context.source);
     let state = event.state;
     if has_spin(&name) {
-        let (facing, up) = placement_orientation(cx.yaw, cx.pitch);
+        let (facing, up) = placement_orientation(yaw, pitch);
         let spin = spin_for(facing, up).unwrap_or(0);
         let s = level.state_with_property(state, "facing", facing_name(facing))?;
         let s = level.state_with_property(s, "spin", &spin.to_string())?;
         return Some(Some(s));
     }
     if matches!(name.as_str(), "molecular_assembler" | "wireless_access_point") {
-        let facing = neg(nearest_looking(cx.yaw, cx.pitch));
+        let facing = neg(nearest_looking(yaw, pitch));
         return Some(Some(level.state_with_property(state, "facing", facing_name(facing))?));
     }
     if horizontal(&name) {
-        let facing = neg(horizontal_looking(cx.yaw));
+        let facing = neg(horizontal_looking(yaw));
         return Some(Some(level.state_with_property(state, "facing", facing_name(facing))?));
     }
     None
@@ -349,7 +368,7 @@ pub(crate) fn card_use(host: &mut dyn ServerHost, stack: &ItemStack, click: &Blo
     let res = ItemResource::of(stack);
     let hand = ItemPlace::PlayerHand { player: click.player, hand: click.hand };
     let done = host.transaction(|host, tx| {
-        if hand.extract(host, tx, &res, count as u32) != count as u32 {
+        if hand.extract(host, tx, &res, count as u32).unwrap_or(0) != count as u32 {
             return Err(());
         }
         for slot in free.iter().take(count) {
@@ -388,7 +407,7 @@ pub(crate) fn give_or_drop(host: &mut dyn ServerHost, player: u128, stack: ItemS
                         None => pass == 1 && *slot != -106,
                     };
                     if fits {
-                        left -= (ItemPlace::PlayerSlot { player, slot: *slot }).insert(host, tx, &res, left).min(left);
+                        left -= (ItemPlace::PlayerSlot { player, slot: *slot }).insert(host, tx, &res, left).unwrap_or(0).min(left);
                     }
                 }
             }

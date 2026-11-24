@@ -51,19 +51,19 @@ impl<R> ResourceHandler<R> for Deferred<dyn ResourceHandler<R>> {
     fn is_valid(&self, host: &mut dyn ServerHost, index: usize, resource: &R) -> bool {
         self.get(host).is_some_and(|h| h.is_valid(host, index, resource))
     }
-    fn insert_at(&self, host: &mut dyn ServerHost, tx: &Transaction, index: usize, resource: &R, amount: u32) -> u32 {
-        self.get(host).map_or(0, |h| h.insert_at(host, tx, index, resource, amount))
+    fn insert_at(&self, host: &mut dyn ServerHost, tx: &TransactionContext, index: usize, resource: &R, amount: u32) -> Result<u32, TransactionError<Overanswered>> {
+        self.get(host).map_or(Ok(0), |h| h.insert_at(host, tx, index, resource, amount))
     }
-    fn extract_at(&self, host: &mut dyn ServerHost, tx: &Transaction, index: usize, resource: &R, amount: u32) -> u32 {
-        self.get(host).map_or(0, |h| h.extract_at(host, tx, index, resource, amount))
+    fn extract_at(&self, host: &mut dyn ServerHost, tx: &TransactionContext, index: usize, resource: &R, amount: u32) -> Result<u32, TransactionError<Overanswered>> {
+        self.get(host).map_or(Ok(0), |h| h.extract_at(host, tx, index, resource, amount))
     }
-    fn insert(&self, host: &mut dyn ServerHost, tx: &Transaction, resource: &R, amount: u32) -> Result<u32, Overanswered> {
+    fn insert(&self, host: &mut dyn ServerHost, tx: &TransactionContext, resource: &R, amount: u32) -> Result<u32, TransactionError<Overanswered>> {
         match self.get(host) {
             Some(h) => h.insert(host, tx, resource, amount),
             None => Ok(0),
         }
     }
-    fn extract(&self, host: &mut dyn ServerHost, tx: &Transaction, resource: &R, amount: u32) -> Result<u32, Overanswered> {
+    fn extract(&self, host: &mut dyn ServerHost, tx: &TransactionContext, resource: &R, amount: u32) -> Result<u32, TransactionError<Overanswered>> {
         match self.get(host) {
             Some(h) => h.extract(host, tx, resource, amount),
             None => Ok(0),
@@ -78,11 +78,11 @@ impl EnergyHandler for Deferred<dyn EnergyHandler> {
     fn capacity(&self, host: &mut dyn ServerHost) -> u32 {
         self.get(host).map_or(0, |h| h.capacity(host))
     }
-    fn insert(&self, host: &mut dyn ServerHost, tx: &Transaction, amount: u32) -> u32 {
-        self.get(host).map_or(0, |h| h.insert(host, tx, amount))
+    fn insert(&self, host: &mut dyn ServerHost, tx: &TransactionContext, amount: u32) -> Result<u32, TransactionError<Overanswered>> {
+        self.get(host).map_or(Ok(0), |h| h.insert(host, tx, amount))
     }
-    fn extract(&self, host: &mut dyn ServerHost, tx: &Transaction, amount: u32) -> u32 {
-        self.get(host).map_or(0, |h| h.extract(host, tx, amount))
+    fn extract(&self, host: &mut dyn ServerHost, tx: &TransactionContext, amount: u32) -> Result<u32, TransactionError<Overanswered>> {
+        self.get(host).map_or(Ok(0), |h| h.extract(host, tx, amount))
     }
 }
 

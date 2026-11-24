@@ -172,18 +172,18 @@ impl ResourceHandler<FluidResource> for InterfaceFluids {
     fn is_valid(&self, host: &mut dyn ServerHost, index: usize, resource: &FluidResource) -> bool {
         index < TANKS && self.allows(&*host, index, resource) && self.inner.is_valid(host, index, resource)
     }
-    fn insert_at(&self, host: &mut dyn ServerHost, tx: &Transaction, index: usize, resource: &FluidResource, amount: u32) -> u32 {
+    fn insert_at(&self, host: &mut dyn ServerHost, tx: &TransactionContext, index: usize, resource: &FluidResource, amount: u32) -> Result<u32, TransactionError<Overanswered>> {
         if index >= TANKS || !self.allows(&*host, index, resource) {
-            return 0;
+            return Ok(0);
         }
         let room = (TANK_MB as u32).saturating_sub(self.inner.amount(host, index));
-        self.inner.insert_at(host, tx, index, resource, amount.min(room)).min(amount)
+        self.inner.insert_at(host, tx, index, resource, amount.min(room)).map(|n| n.min(amount))
     }
-    fn extract_at(&self, host: &mut dyn ServerHost, tx: &Transaction, index: usize, resource: &FluidResource, amount: u32) -> u32 {
+    fn extract_at(&self, host: &mut dyn ServerHost, tx: &TransactionContext, index: usize, resource: &FluidResource, amount: u32) -> Result<u32, TransactionError<Overanswered>> {
         if index >= TANKS {
-            return 0;
+            return Ok(0);
         }
-        self.inner.extract_at(host, tx, index, resource, amount).min(amount)
+        self.inner.extract_at(host, tx, index, resource, amount).map(|n| n.min(amount))
     }
 }
 

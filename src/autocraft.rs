@@ -723,7 +723,7 @@ impl<'a> CpuNet<'a> {
 }
 
 /// One input into a machine's item or fluid handler on face `f`, in `tx`: how much went in.
-fn insert_into(host: &mut dyn ServerHost, level: LevelRef, tx: &Transaction, q: Pos, f: Direction, k: &AeKey, n: i64) -> i64 {
+fn insert_into(host: &mut dyn ServerHost, level: LevelRef, tx: &TransactionContext, q: Pos, f: Direction, k: &AeKey, n: i64) -> i64 {
     let n = n.clamp(0, i64::from(u32::MAX)) as u32;
     let went = match k.key_type() {
         KeyType::Items => {
@@ -848,7 +848,7 @@ impl CpuNetwork for CpuNet<'_> {
                 }
                 Err(true)
             });
-            if accepts != Err(true) {
+            if !matches!(accepts, Err(TransactionError::Aborted(true))) {
                 continue;
             }
             // What doesn't fit now goes on the send list, and the provider is busy until it is gone.
@@ -1082,7 +1082,7 @@ fn run_cpus(host: &mut dyn ServerHost, dim: &'static str, tick: u64) {
                         continue;
                     }
                     let want = (*left).min(i64::from(u32::MAX)) as u32;
-                    let got = net.host.transaction(|host, tx| Ok::<u32, ()>(h.extract_at(host, tx, i, &res, want))).unwrap_or(0);
+                    let got = net.host.transaction(|host, tx| Ok::<u32, ()>(h.extract_at(host, tx, i, &res, want).unwrap_or(0))).unwrap_or(0);
                     if got > 0 {
                         arrivals.push((k.clone(), i64::from(got)));
                         let took = c.cpu.insert(k, i64::from(got), Actionable::Modulate, &mut net);

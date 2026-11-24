@@ -174,7 +174,7 @@ fn store_from_slot(
     let place = ItemPlace::PlayerSlot { player, slot };
     let res = ItemResource::of(stack);
     let taken = host
-        .transaction(|host, tx| Ok::<u32, ()>(place.extract(host, tx, &res, fits as u32)))
+        .transaction(|host, tx| Ok::<u32, ()>(place.extract(host, tx, &res, fits as u32).unwrap_or(0)))
         .unwrap_or(0);
     if taken == 0 {
         return 0;

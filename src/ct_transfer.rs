@@ -215,7 +215,7 @@ pub(crate) fn take_one(host: &mut dyn ServerHost, player: u128, slots: &mut [(i3
     let (slot, stack, left) = slots.iter_mut().find(|(_, st, left)| sid(st) == id && *left > 0)?;
     let res = ItemResource::of(stack);
     let s = *slot;
-    host.transaction(|host, tx| if (ItemPlace::PlayerSlot { player, slot: s }).extract(host, tx, &res, 1) == 1 { Ok(()) } else { Err(()) }).ok()?;
+    host.transaction(|host, tx| if (ItemPlace::PlayerSlot { player, slot: s }).extract(host, tx, &res, 1).unwrap_or(0) == 1 { Ok(()) } else { Err(()) }).ok()?;
     *left -= 1;
     with_count(stack, 1)
 }
@@ -248,7 +248,7 @@ pub(crate) fn give(host: &mut dyn ServerHost, player: u128, stack: &ItemStack, c
     }
     host.transaction(|host, tx| {
         for (s, n) in &plan {
-            if (ItemPlace::PlayerSlot { player, slot: *s }).insert(host, tx, &res, *n) != *n {
+            if (ItemPlace::PlayerSlot { player, slot: *s }).insert(host, tx, &res, *n).unwrap_or(0) != *n {
                 return Err(());
             }
         }

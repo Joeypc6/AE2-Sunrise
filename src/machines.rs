@@ -262,37 +262,37 @@ impl ResourceHandler<ItemResource> for MachineItems {
     fn is_valid(&self, host: &mut dyn ServerHost, index: usize, resource: &ItemResource) -> bool {
         self.capacity(host, index, Some(resource)) > 0
     }
-    fn insert_at(&self, host: &mut dyn ServerHost, tx: &Transaction, index: usize, resource: &ItemResource, amount: u32) -> u32 {
-        let Some(slot) = self.slot(index) else { return 0 };
+    fn insert_at(&self, host: &mut dyn ServerHost, tx: &TransactionContext, index: usize, resource: &ItemResource, amount: u32) -> Result<u32, TransactionError<Overanswered>> {
+        let Some(slot) = self.slot(index) else { return Ok(0) };
         if amount == 0 {
-            return 0;
+            return Ok(0);
         }
         let limit = self.insert_limit(&*host, slot, resource.as_stack());
         let current = self.be.item_slot(&*host, slot as u32).ok().flatten();
         let have = match &current {
-            Some(c) if !resource.matches(c) => return 0,
+            Some(c) if !resource.matches(c) => return Ok(0),
             Some(c) => c.count(),
             None => 0,
         };
         let n = amount.min(limit.saturating_sub(have));
         if n == 0 {
-            return 0;
+            return Ok(0);
         }
-        let Some(new) = resource.to_stack(have + n) else { return 0 };
-        if self.be.set_item_slot(host, tx, slot as u32, Some(new)).is_ok() { n } else { 0 }
+        let Some(new) = resource.to_stack(have + n) else { return Ok(0) };
+        if self.be.set_item_slot(host, tx, slot as u32, Some(new)).is_ok() { Ok(n) } else { Ok(0) }
     }
-    fn extract_at(&self, host: &mut dyn ServerHost, tx: &Transaction, index: usize, resource: &ItemResource, amount: u32) -> u32 {
-        let Some(slot) = self.slot(index) else { return 0 };
+    fn extract_at(&self, host: &mut dyn ServerHost, tx: &TransactionContext, index: usize, resource: &ItemResource, amount: u32) -> Result<u32, TransactionError<Overanswered>> {
+        let Some(slot) = self.slot(index) else { return Ok(0) };
         if amount == 0 || !self.may_extract(&*host, slot) {
-            return 0;
+            return Ok(0);
         }
-        let Some(current) = self.be.item_slot(&*host, slot as u32).ok().flatten() else { return 0 };
+        let Some(current) = self.be.item_slot(&*host, slot as u32).ok().flatten() else { return Ok(0) };
         if !resource.matches(&current) {
-            return 0;
+            return Ok(0);
         }
         let n = amount.min(current.count());
         let left = with_count(&current, current.count() - n);
-        if self.be.set_item_slot(host, tx, slot as u32, left).is_ok() { n } else { 0 }
+        if self.be.set_item_slot(host, tx, slot as u32, left).is_ok() { Ok(n) } else { Ok(0) }
     }
 }
 

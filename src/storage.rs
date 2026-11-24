@@ -1334,7 +1334,7 @@ pub(crate) fn sweep_moved(host: &mut dyn ServerHost, player: u128, stacks: &[Opt
         .collect();
     for (slot, s) in marked {
         let place = ItemPlace::PlayerSlot { player, slot };
-        let _ = host.transaction(|host, tx| match place.extract(host, tx, &ItemResource::of(&s), s.count()) {
+        let _ = host.transaction(|host, tx| match place.extract(host, tx, &ItemResource::of(&s), s.count()).unwrap_or(0) {
             n if n == s.count() => Ok(()),
             _ => Err(()),
         });
@@ -1425,7 +1425,7 @@ fn give(host: &mut dyn ServerHost, player: u128, dim: &'static str, pos: Pos, st
     }
     let _ = host.transaction(|host, tx| {
         for (slot, n) in &plan {
-            if (ItemPlace::PlayerSlot { player, slot: *slot }).insert(host, tx, &res, *n) != *n {
+            if (ItemPlace::PlayerSlot { player, slot: *slot }).insert(host, tx, &res, *n).unwrap_or(0) != *n {
                 return Err(());
             }
         }

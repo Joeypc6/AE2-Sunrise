@@ -758,7 +758,7 @@ pub(crate) fn take_cursor(host: &mut dyn ServerHost, player: u128) -> Result<Opt
     let place = cursor_place(&*host, player).ok_or(())?;
     let Some(st) = place.stack_owned(host) else { return Ok(None) };
     let n = st.count();
-    host.transaction(|host, tx| if place.extract(host, tx, &ItemResource::of(&st), n) == n { Ok(()) } else { Err(()) })?;
+    host.transaction(|host, tx| if place.extract(host, tx, &ItemResource::of(&st), n).unwrap_or(0) == n { Ok(()) } else { Err(()) }).map_err(|_| ())?;
     Ok(Some(st))
 }
 
@@ -767,7 +767,7 @@ pub(crate) fn put_cursor(host: &mut dyn ServerHost, player: u128, st: Option<Ite
     let Some(st) = st else { return };
     let n = st.count();
     let ok = cursor_place(&*host, player).is_some_and(|place| {
-        host.transaction(|host, tx| if place.insert(host, tx, &ItemResource::of(&st), n) == n { Ok(()) } else { Err(()) }).is_ok()
+        host.transaction(|host, tx| if place.insert(host, tx, &ItemResource::of(&st), n).unwrap_or(0) == n { Ok(()) } else { Err(()) }).is_ok()
     });
     if !ok {
         give_back(host, player, st);

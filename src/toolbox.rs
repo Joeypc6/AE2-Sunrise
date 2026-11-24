@@ -175,7 +175,7 @@ pub(crate) fn belt_click(host: &mut dyn ServerHost, player: u128, i: usize, righ
     // The cursor and the tool change together, or neither.
     let _ = host.transaction(|host, tx| {
         if let Some(c) = &cursor
-            && cursor_place.extract(host, tx, &ItemResource::of(c), c.count()) != c.count()
+            && cursor_place.extract(host, tx, &ItemResource::of(c), c.count()).unwrap_or(0) != c.count()
         {
             return Err(());
         }
@@ -183,7 +183,7 @@ pub(crate) fn belt_click(host: &mut dyn ServerHost, player: u128, i: usize, righ
             return Err(());
         }
         if let Some(c) = &cur
-            && cursor_place.insert(host, tx, &ItemResource::of(c), c.count()) != c.count()
+            && cursor_place.insert(host, tx, &ItemResource::of(c), c.count()).unwrap_or(0) != c.count()
         {
             return Err(());
         }

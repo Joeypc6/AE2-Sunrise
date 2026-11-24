@@ -324,7 +324,7 @@ pub(crate) struct PaintBlock;
 
 #[mod_api::sunrise_part]
 impl BlockPart for PaintBlock {
-    fn neighbor_changed(&self, _level: &mut dyn LevelTicksHost, event: &mut NeighborChangedEvent) {
+    fn neighbor_changed(&self, _level: &mut dyn LevelWriteHost, event: &mut NeighborChangedEvent) {
         let mut g = CHANGED.lock().unwrap_or_else(|e| e.into_inner());
         if g.len() < 4096 {
             g.push((

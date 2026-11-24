@@ -1829,11 +1829,11 @@ impl<R: 'static> ResourceHandler<R> for Slice<R> {
     fn is_valid(&self, host: &mut dyn ServerHost, index: usize, resource: &R) -> bool {
         index < self.len && self.inner.is_valid(host, self.base + index, resource)
     }
-    fn insert_at(&self, host: &mut dyn ServerHost, tx: &Transaction, index: usize, resource: &R, amount: u32) -> u32 {
-        if index < self.len { self.inner.insert_at(host, tx, self.base + index, resource, amount).min(amount) } else { 0 }
+    fn insert_at(&self, host: &mut dyn ServerHost, tx: &TransactionContext, index: usize, resource: &R, amount: u32) -> Result<u32, TransactionError<Overanswered>> {
+        if index < self.len { self.inner.insert_at(host, tx, self.base + index, resource, amount).map(|n| n.min(amount)) } else { Ok(0) }
     }
-    fn extract_at(&self, host: &mut dyn ServerHost, tx: &Transaction, index: usize, resource: &R, amount: u32) -> u32 {
-        if index < self.len { self.inner.extract_at(host, tx, self.base + index, resource, amount).min(amount) } else { 0 }
+    fn extract_at(&self, host: &mut dyn ServerHost, tx: &TransactionContext, index: usize, resource: &R, amount: u32) -> Result<u32, TransactionError<Overanswered>> {
+        if index < self.len { self.inner.extract_at(host, tx, self.base + index, resource, amount).map(|n| n.min(amount)) } else { Ok(0) }
     }
 }
 
@@ -1847,11 +1847,11 @@ impl EnergyHandler for NoEnergy {
     fn capacity(&self, _host: &mut dyn ServerHost) -> u32 {
         0
     }
-    fn insert(&self, _host: &mut dyn ServerHost, _tx: &Transaction, _amount: u32) -> u32 {
-        0
+    fn insert(&self, _host: &mut dyn ServerHost, _tx: &TransactionContext, _amount: u32) -> Result<u32, TransactionError<Overanswered>> {
+        Ok(0)
     }
-    fn extract(&self, _host: &mut dyn ServerHost, _tx: &Transaction, _amount: u32) -> u32 {
-        0
+    fn extract(&self, _host: &mut dyn ServerHost, _tx: &TransactionContext, _amount: u32) -> Result<u32, TransactionError<Overanswered>> {
+        Ok(0)
     }
 }
 

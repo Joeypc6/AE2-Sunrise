@@ -223,7 +223,7 @@ impl StructureType for Meteorite {
             }
         }
         let start = Start { center: [center_x, center_z], radius, y, lake, random: random.0 };
-        Some(FoundStructure { position: [mx, stub_y, mz], pieces: vec![Arc::new(Piece(start))] })
+        Some(FoundStructure { position: [mx, stub_y, mz], pieces: vec![Arc::new(Piece(start))], pool_pieces: Vec::new() })
     }
 
     fn load_piece(&self, _metadata: &dyn BlockMetadata, tag: &Compound) -> Result<Arc<dyn StructurePiece>, StructureError> {

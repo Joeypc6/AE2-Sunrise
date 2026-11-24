@@ -134,21 +134,21 @@ impl EnergyHandler for ItemFe {
         let Some(stack) = self.0.stack_owned(host) else { return 0 };
         capacity(&stack).map_or(0, |most| (most / crate::net::ae_per_fe().max(1e-9)).floor().clamp(0.0, f64::from(u32::MAX)) as u32)
     }
-    fn insert(&self, host: &mut dyn ServerHost, tx: &Transaction, amount: u32) -> u32 {
-        let Some(stack) = self.0.stack_owned(host) else { return 0 };
-        let Some(most) = capacity(&stack) else { return 0 };
+    fn insert(&self, host: &mut dyn ServerHost, tx: &TransactionContext, amount: u32) -> Result<u32, TransactionError<Overanswered>> {
+        let Some(stack) = self.0.stack_owned(host) else { return Ok(0) };
+        let Some(most) = capacity(&stack) else { return Ok(0) };
         let per = crate::net::ae_per_fe().max(1e-9);
         let have = item_power(&stack);
         let room = ((most - have) / per).floor().max(0.0);
         let n = f64::from(amount).min(room) as u32;
         if n == 0 {
-            return 0;
+            return Ok(0);
         }
         let edited = crate::cells::edit_stack(&self.0, host, tx, |s| set_item_power(s, (have + f64::from(n) * per).min(most))).is_ok();
-        if edited { n } else { 0 }
+        if edited { Ok(n) } else { Ok(0) }
     }
-    fn extract(&self, _host: &mut dyn ServerHost, _tx: &Transaction, _amount: u32) -> u32 {
-        0
+    fn extract(&self, _host: &mut dyn ServerHost, _tx: &TransactionContext, _amount: u32) -> Result<u32, TransactionError<Overanswered>> {
+        Ok(0)
     }
 }
 

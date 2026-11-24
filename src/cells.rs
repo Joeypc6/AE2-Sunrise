@@ -242,7 +242,7 @@ pub(crate) fn stage_stack_edit(ed: &mut ItemComponentEditor<'_>, f: impl FnOnce(
 
 /// `place`'s stack edited as an owned copy in `tx` (`stage_stack_edit`): Err, for the caller to roll back, when it
 /// was not edited.
-pub(crate) fn edit_stack(place: &ItemPlace, host: &mut dyn ServerHost, tx: &Transaction, f: impl FnOnce(&mut ItemStack)) -> Result<(), ()> {
+pub(crate) fn edit_stack(place: &ItemPlace, host: &mut dyn ServerHost, tx: &TransactionContext, f: impl FnOnce(&mut ItemStack)) -> Result<(), ()> {
     let mut ok = false;
     place.edit(host, tx, |ed| ok = stage_stack_edit(ed, f)).map_err(|_| ())?;
     if ok { Ok(()) } else { Err(()) }

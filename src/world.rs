@@ -254,18 +254,18 @@ impl ResourceHandler<ItemResource> for ChargerItems {
     fn is_valid(&self, host: &mut dyn ServerHost, index: usize, resource: &ItemResource) -> bool {
         index == 0 && chargeable(&*host, sid(resource.as_stack()))
     }
-    fn insert_at(&self, host: &mut dyn ServerHost, tx: &Transaction, index: usize, resource: &ItemResource, amount: u32) -> u32 {
+    fn insert_at(&self, host: &mut dyn ServerHost, tx: &TransactionContext, index: usize, resource: &ItemResource, amount: u32) -> Result<u32, TransactionError<Overanswered>> {
         if !self.is_valid(host, index, resource) || self.inner.amount(host, index) > 0 {
-            return 0;
+            return Ok(0);
         }
-        self.inner.insert_at(host, tx, index, resource, amount.min(1)).min(1)
+        self.inner.insert_at(host, tx, index, resource, amount.min(1)).map(|n| n.min(1))
     }
-    fn extract_at(&self, host: &mut dyn ServerHost, tx: &Transaction, index: usize, resource: &ItemResource, amount: u32) -> u32 {
+    fn extract_at(&self, host: &mut dyn ServerHost, tx: &TransactionContext, index: usize, resource: &ItemResource, amount: u32) -> Result<u32, TransactionError<Overanswered>> {
         let done = self.inner.resource(host, index).is_some_and(|r| charger_done(&*host, r.as_stack()));
         if !done {
-            return 0;
+            return Ok(0);
         }
-        self.inner.extract_at(host, tx, index, resource, amount).min(amount)
+        self.inner.extract_at(host, tx, index, resource, amount).map(|n| n.min(amount))
     }
 }
 

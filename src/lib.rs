@@ -437,6 +437,11 @@ impl Hooks for Mod {
         cell_icons::register(r); // polish
     }
 
+    /// The storage cells' tooltip icons (cell_icons.rs, StorageCellTooltipComponent).
+    fn register_client_tooltip_component_factories(&self, _context: &RegistrationContext, event: &mut RegisterClientTooltipComponentFactoriesEvent<'_>) {
+        cell_icons::register_factories(event);
+    }
+
     fn register_villager_professions(&self, _context: &RegistrationContext, event: &mut RegisterVillagerProfessionsEvent<'_>) {
         world::professions(event);
     }
@@ -785,6 +790,9 @@ impl Hooks for Mod {
 
     /// The crafting overlays (amount, plan) take the clicks while open; a click on a craftable entry opens them.
     fn screen_mouse_button_pressed_pre(&self, host: &dyn ClientHost, event: &mut ScreenMouseButtonPressedPreEvent<'_>) -> Flow {
+        if overlay_screen(event.screen.id) {
+            return Flow::Continue;
+        }
         if knife::is_open(host) {
             knife::pressed(host, event.screen, event.button);
             event.cancelled = true;
@@ -860,6 +868,9 @@ impl Hooks for Mod {
     }
 
     fn screen_mouse_scrolled_pre(&self, host: &dyn ClientHost, event: &mut ScreenMouseScrolledPreEvent<'_>) -> Flow {
+        if overlay_screen(event.screen.id) {
+            return Flow::Continue;
+        }
         if tool::is_open(host) {
             tool::scrolled(event.scroll[1]);
             return Flow::Cancel;
@@ -877,13 +888,19 @@ impl Hooks for Mod {
     }
 
     fn screen_mouse_dragged_pre(&self, host: &dyn ClientHost, event: &mut ScreenMouseDraggedPreEvent<'_>) -> Flow {
+        if overlay_screen(event.screen.id) {
+            return Flow::Continue;
+        }
         if let Some(view) = wireless::view(host, event.screen) {
             return if screens::dragged(&view) { Flow::Cancel } else { Flow::Continue };
         }
         if access_term::dragged(host, event.screen) || screens::dragged(event.screen) { Flow::Cancel } else { Flow::Continue }
     }
 
-    fn screen_mouse_button_released_pre(&self, _host: &dyn ClientHost, _event: &mut ScreenMouseButtonReleasedPreEvent<'_>) -> Flow {
+    fn screen_mouse_button_released_pre(&self, _host: &dyn ClientHost, event: &mut ScreenMouseButtonReleasedPreEvent<'_>) -> Flow {
+        if overlay_screen(event.screen.id) {
+            return Flow::Continue;
+        }
         screens::released();
         access_term::released();
         encoder::released();
@@ -891,6 +908,9 @@ impl Hooks for Mod {
     }
 
     fn screen_key_pressed_pre(&self, host: &dyn ClientHost, event: &mut ScreenKeyPressedPreEvent<'_>) -> Flow {
+        if overlay_screen(event.screen.id) {
+            return Flow::Continue;
+        }
         if knife::is_open(host) && knife::key(event.key) {
             event.cancelled = true;
             return Flow::Cancel;
@@ -920,6 +940,9 @@ impl Hooks for Mod {
     }
 
     fn screen_char_typed_pre(&self, host: &dyn ClientHost, event: &mut ScreenCharTypedPreEvent<'_>) -> Flow {
+        if overlay_screen(event.screen.id) {
+            return Flow::Continue;
+        }
         if knife::is_open(host) && knife::typed(event.c) {
             event.cancelled = true;
             return Flow::Cancel;
@@ -1016,4 +1039,22 @@ impl Hooks for Mod {
             Ok(|host: &dyn ClientHost, _input: &ItemModelPropertyInput<'_>| handtools::compass_property(host))
         });
     }
+}
+
+/// The closure's own error of an aborted transaction (Sunrise f8aa80e's `TransactionError::Aborted`); the scope
+/// refusals answer as the old API's transaction did not run (`None`).
+pub(crate) fn aborted<E>(error: TransactionError<E>) -> Option<E> {
+    match error {
+        TransactionError::Aborted(e) => Some(e),
+        _ => None,
+    }
+}
+
+/// The overlays and prompts the screen input Pre hooks reach since Sunrise f8aa80e (hook versions 2 and 3) and did not
+/// before; AE2's screen input stays off them, as on 7cfdf81.
+fn overlay_screen(id: &str) -> bool {
+    matches!(
+        id,
+        "command_prompt" | "link_prompt" | "code_of_conduct" | "server_pack_prompt" | "dialog" | "book_view" | "book_edit" | "book_sign" | "lectern" | "sign_editor"
+    )
 }

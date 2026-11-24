@@ -286,11 +286,11 @@ pub(crate) fn player_tick(host: &mut dyn ServerHost, player: u128) {
         }
         let Some(s) = target else { continue };
         let moved =
-            host.transaction(|host, tx| if (ItemPlace::PlayerSlot { player, slot: s }).insert(host, tx, &res, count) == count { Ok(()) } else { Err(()) });
+            host.transaction(|host, tx| if (ItemPlace::PlayerSlot { player, slot: s }).insert(host, tx, &res, count).unwrap_or(0) == count { Ok(()) } else { Err(()) });
         if moved.is_ok() && !crate::bus::set_item_slot(host, level, at, slot, None) {
             // The slot wouldn't change: take the copy back out of the inventory.
             let _ =
-                host.transaction(|host, tx| if (ItemPlace::PlayerSlot { player, slot: s }).extract(host, tx, &res, count) == count { Ok(()) } else { Err(()) });
+                host.transaction(|host, tx| if (ItemPlace::PlayerSlot { player, slot: s }).extract(host, tx, &res, count).unwrap_or(0) == count { Ok(()) } else { Err(()) });
         }
         resend(player);
     }

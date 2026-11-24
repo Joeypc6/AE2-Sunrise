@@ -6,11 +6,16 @@ authors = ["Sunrise port: Joeypc6", "TeamAppliedEnergistics"]
 api = "0.2"
 side = "both"
 capabilities = ["registries"]
+license = "LGPL-3.0-or-later AND CC-BY-NC-SA-3.0 AND CC0-1.0 AND CC-BY-4.0"
+license_url = "https://github.com/Joeypc6/AE2-Sunrise/blob/main/NOTICE"
+credits = "Sunrise port by Joeypc6, based on Applied Energistics 2 by TeamAppliedEnergistics (AlgorithmX2 et al.; textures and models by Ridanisaurus Rid and AlgorithmX2 et al.)."
+homepage = "https://github.com/Joeypc6/AE2-Sunrise"
+issues = "https://github.com/Joeypc6/AE2-Sunrise/issues"
 
 [native]
 game = "26.3"
-# Pinned to Sunrise Dev 2026-11-22 (7cfdf81).
-sunrise = "7cfdf81463ebb4a19705768273909f7f3f03601d"
+# Pinned to Sunrise Dev 2026-11-24 (f8aa80e).
+sunrise = "f8aa80e4c40cf1a5d30e85d13937f3fcf06d8237"
 mixins = "e59da9094f0c2fdda6c627fe9eff22dec6a906f0"
 
 [dependencies]

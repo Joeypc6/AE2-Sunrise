@@ -94,7 +94,7 @@ pub(crate) fn takes_apart(item: &str) -> bool {
 fn trade(host: &mut dyn ServerHost, player: u128, hand: Hand, stack: &ItemStack, count: u32, parts: Vec<ItemStack>) -> bool {
     let res = ItemResource::of(stack);
     let place = ItemPlace::PlayerHand { player, hand };
-    let took = host.transaction(|host, tx| if place.extract(host, tx, &res, count) == count { Ok(()) } else { Err(()) }).is_ok();
+    let took = host.transaction(|host, tx| if place.extract(host, tx, &res, count).unwrap_or(0) == count { Ok(()) } else { Err(()) }).is_ok();
     if took {
         for p in parts {
             crate::wrench::give_or_drop(host, player, p);
@@ -200,10 +200,10 @@ fn replace_card(host: &mut dyn ServerHost, player: u128, hand: Hand, old: &ItemS
     };
     let place = ItemPlace::PlayerSlot { player, slot };
     host.transaction(|host, tx| {
-        if place.extract(host, tx, &ItemResource::of(old), old.count()) != old.count() {
+        if place.extract(host, tx, &ItemResource::of(old), old.count()).unwrap_or(0) != old.count() {
             return Err(());
         }
-        if place.insert(host, tx, &ItemResource::of(&new), new.count()) != new.count() {
+        if place.insert(host, tx, &ItemResource::of(&new), new.count()).unwrap_or(0) != new.count() {
             return Err(());
         }
         Ok(())
@@ -309,7 +309,7 @@ fn paste_patterns(host: &mut dyn ServerHost, level: LevelRef, pos: Pos, player: 
             if owed == 0 {
                 break;
             }
-            owed -= (ItemPlace::PlayerSlot { player, slot }).extract(host, tx, &blank_res, owed).min(owed);
+            owed -= (ItemPlace::PlayerSlot { player, slot }).extract(host, tx, &blank_res, owed).unwrap_or(0).min(owed);
         }
         if owed > 0 { Err(()) } else { Ok(()) }
     });

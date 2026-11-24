@@ -144,7 +144,7 @@ pub(crate) fn forget_credit(dim: &'static str, pos: Pos) {
 /// How much of `key` the face `face` of `target` takes now (an insert in a transaction that is undone).
 fn room(host: &mut dyn ServerHost, level: LevelRef, target: Pos, face: Direction, key: &AeKey) -> i64 {
     fn fits<R>(host: &mut dyn ServerHost, h: &Capability<dyn ResourceHandler<R>>, res: &R, amount: u32) -> u32 {
-        host.transaction(|host, tx| Err::<(), u32>(h.insert(host, tx, res, amount).unwrap_or(0))).err().unwrap_or(0)
+        host.transaction(|host, tx| Err::<(), u32>(h.insert(host, tx, res, amount).unwrap_or(0))).err().and_then(crate::aborted).unwrap_or(0)
     }
     if key.key_type() == KeyType::Fluids {
         let (Some(h), Some(res)) = (level.capability(host, &FLUIDS, target, Some(face)), crate::parts::fluid_resource(&*host, key)) else { return 0 };

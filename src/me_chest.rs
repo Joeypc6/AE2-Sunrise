@@ -87,17 +87,17 @@ impl ResourceHandler<ItemResource> for CellSlot {
     fn is_valid(&self, _host: &mut dyn ServerHost, index: usize, resource: &ItemResource) -> bool {
         index == 0 && is_cell_item(sid(resource.as_stack()))
     }
-    fn insert_at(&self, host: &mut dyn ServerHost, tx: &Transaction, index: usize, resource: &ItemResource, amount: u32) -> u32 {
+    fn insert_at(&self, host: &mut dyn ServerHost, tx: &TransactionContext, index: usize, resource: &ItemResource, amount: u32) -> Result<u32, TransactionError<Overanswered>> {
         if !self.is_valid(host, index, resource) || self.inner.amount(host, index) > 0 {
-            return 0;
+            return Ok(0);
         }
-        self.inner.insert_at(host, tx, index, resource, amount.min(1)).min(1)
+        self.inner.insert_at(host, tx, index, resource, amount.min(1)).map(|n| n.min(1))
     }
-    fn extract_at(&self, host: &mut dyn ServerHost, tx: &Transaction, index: usize, resource: &ItemResource, amount: u32) -> u32 {
+    fn extract_at(&self, host: &mut dyn ServerHost, tx: &TransactionContext, index: usize, resource: &ItemResource, amount: u32) -> Result<u32, TransactionError<Overanswered>> {
         if index != 0 {
-            return 0;
+            return Ok(0);
         }
-        self.inner.extract_at(host, tx, index, resource, amount).min(amount)
+        self.inner.extract_at(host, tx, index, resource, amount).map(|n| n.min(amount))
     }
 }
 
@@ -127,18 +127,18 @@ impl ResourceHandler<ItemResource> for CellInput {
         let key = key_of(&*host, resource.as_stack());
         crate::storage::simulate(host, Scope::Chest(self.pos), None, &key, 1, true) > 0
     }
-    fn insert_at(&self, host: &mut dyn ServerHost, _tx: &Transaction, index: usize, resource: &ItemResource, amount: u32) -> u32 {
+    fn insert_at(&self, host: &mut dyn ServerHost, _tx: &TransactionContext, index: usize, resource: &ItemResource, amount: u32) -> Result<u32, TransactionError<Overanswered>> {
         if index != 0 || amount == 0 {
-            return 0;
+            return Ok(0);
         }
         // (The cell is written back through its slot in a transaction nested in the caller's: an abort puts the cell
         // back as it was, and storage reads it again since its version on the item moved back.)
         let key = key_of(&*host, resource.as_stack());
         let done = crate::storage::insert(host, Scope::Chest(self.pos), None, &key, i64::from(amount));
-        done.clamp(0, i64::from(amount)) as u32
+        Ok(done.clamp(0, i64::from(amount)) as u32)
     }
-    fn extract_at(&self, _host: &mut dyn ServerHost, _tx: &Transaction, _index: usize, _resource: &ItemResource, _amount: u32) -> u32 {
-        0
+    fn extract_at(&self, _host: &mut dyn ServerHost, _tx: &TransactionContext, _index: usize, _resource: &ItemResource, _amount: u32) -> Result<u32, TransactionError<Overanswered>> {
+        Ok(0)
     }
 }
 

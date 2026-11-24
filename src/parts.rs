@@ -624,7 +624,7 @@ fn import_items(host: &mut dyn ServerHost, level: LevelRef, pos: Pos, target: Po
         if room <= 0 {
             continue;
         }
-        let got = host.transaction(|host, tx| Ok::<u32, ()>(h.extract_at(host, tx, i, &res, room as u32))).unwrap_or(0);
+        let got = host.transaction(|host, tx| Ok::<u32, ()>(h.extract_at(host, tx, i, &res, room as u32).unwrap_or(0))).unwrap_or(0);
         debug(&format!("  slot {i}: {} x{have}, room {room}, got {got}", key.id()));
         if got == 0 {
             continue;
@@ -632,7 +632,7 @@ fn import_items(host: &mut dyn ServerHost, level: LevelRef, pos: Pos, target: Po
         let stored = storage::insert(host, scope, None, &key, i64::from(got));
         if stored < i64::from(got) {
             let back = got - stored as u32;
-            let _ = host.transaction(|host, tx| Ok::<u32, ()>(h.insert_at(host, tx, i, &res, back)));
+            let _ = host.transaction(|host, tx| Ok::<u32, ()>(h.insert_at(host, tx, i, &res, back).unwrap_or(0)));
         }
         moved += stored;
     }
@@ -664,7 +664,7 @@ fn import_fluids(host: &mut dyn ServerHost, level: LevelRef, pos: Pos, target: P
         if room <= 0 {
             continue;
         }
-        let got = host.transaction(|host, tx| Ok::<u32, ()>(h.extract_at(host, tx, i, &res, room as u32))).unwrap_or(0);
+        let got = host.transaction(|host, tx| Ok::<u32, ()>(h.extract_at(host, tx, i, &res, room as u32).unwrap_or(0))).unwrap_or(0);
         debug(&format!("  slot {i}: {} x{have}, room {room}, got {got}", key.id()));
         if got == 0 {
             continue;
@@ -672,7 +672,7 @@ fn import_fluids(host: &mut dyn ServerHost, level: LevelRef, pos: Pos, target: P
         let stored = storage::insert(host, scope, None, &key, i64::from(got));
         if stored < i64::from(got) {
             let back = got - stored as u32;
-            let _ = host.transaction(|host, tx| Ok::<u32, ()>(h.insert_at(host, tx, i, &res, back)));
+            let _ = host.transaction(|host, tx| Ok::<u32, ()>(h.insert_at(host, tx, i, &res, back).unwrap_or(0)));
         }
         moved_mb += stored;
     }
@@ -681,7 +681,7 @@ fn import_fluids(host: &mut dyn ServerHost, level: LevelRef, pos: Pos, target: P
 
 /// How much of `res` the handler takes: an insert in a transaction that is then undone.
 fn fits<R>(host: &mut dyn ServerHost, h: &Capability<dyn ResourceHandler<R>>, res: &R, amount: u32) -> u32 {
-    host.transaction(|host, tx| Err::<(), u32>(h.insert(host, tx, res, amount).unwrap_or(0))).err().unwrap_or(0)
+    host.transaction(|host, tx| Err::<(), u32>(h.insert(host, tx, res, amount).unwrap_or(0))).err().and_then(crate::aborted).unwrap_or(0)
 }
 
 fn export_items(host: &mut dyn ServerHost, level: LevelRef, pos: Pos, target: Pos, face: Direction, key: &AeKey, want: i64) -> i64 {
@@ -752,7 +752,7 @@ fn with_caches<R>(f: impl FnOnce(&mut HashMap<(&'static str, Pos), BusCache>) ->
 struct LiveItems<'a> {
     h: &'a Capability<dyn ResourceHandler<ItemResource>>,
     host: &'a mut dyn ServerHost,
-    tx: Option<&'a Transaction>,
+    tx: Option<&'a TransactionContext>,
 }
 
 impl crate::ext_cache::Slots<ItemResource> for LiveItems<'_> {
@@ -773,17 +773,17 @@ impl crate::ext_cache::Slots<ItemResource> for LiveItems<'_> {
     }
     fn insert(&mut self, i: usize, r: &ItemResource, n: i64) -> i64 {
         let Some(tx) = self.tx else { return 0 };
-        i64::from(self.h.insert_at(self.host, tx, i, r, n.clamp(0, i64::from(u32::MAX)) as u32))
+        i64::from(self.h.insert_at(self.host, tx, i, r, n.clamp(0, i64::from(u32::MAX)) as u32).unwrap_or(0))
     }
     fn extract(&mut self, i: usize, r: &ItemResource, n: i64) -> i64 {
         let Some(tx) = self.tx else { return 0 };
-        i64::from(self.h.extract_at(self.host, tx, i, r, n.clamp(0, i64::from(u32::MAX)) as u32))
+        i64::from(self.h.extract_at(self.host, tx, i, r, n.clamp(0, i64::from(u32::MAX)) as u32).unwrap_or(0))
     }
     fn can_extract(&mut self, i: usize, r: &ItemResource, n: i64) -> bool {
         // fixG: StorageAdapter's probe for EXTRACTABLE_ONLY: 1, then the whole amount, in a transaction always aborted.
         let h = self.h;
         let n = n.clamp(1, i64::from(u32::MAX)) as u32;
-        self.host.transaction(|host, tx| Err::<(), bool>(h.extract_at(host, tx, i, r, 1) > 0 || h.extract_at(host, tx, i, r, n) > 0)).unwrap_err()
+        self.host.transaction(|host, tx| Err::<(), bool>(h.extract_at(host, tx, i, r, 1).unwrap_or(0) > 0 || h.extract_at(host, tx, i, r, n).unwrap_or(0) > 0)).err().and_then(crate::aborted).unwrap_or(false)
     }
     fn key_of(&mut self, r: &ItemResource) -> AeKey {
         key_of(&*self.host, r.as_stack())
@@ -797,7 +797,7 @@ impl crate::ext_cache::Slots<ItemResource> for LiveItems<'_> {
 struct LiveFluids<'a> {
     h: &'a Capability<dyn ResourceHandler<FluidResource>>,
     host: &'a mut dyn ServerHost,
-    tx: Option<&'a Transaction>,
+    tx: Option<&'a TransactionContext>,
 }
 
 impl crate::ext_cache::Slots<FluidResource> for LiveFluids<'_> {
@@ -819,17 +819,17 @@ impl crate::ext_cache::Slots<FluidResource> for LiveFluids<'_> {
     }
     fn insert(&mut self, i: usize, r: &FluidResource, n: i64) -> i64 {
         let Some(tx) = self.tx else { return 0 };
-        i64::from(self.h.insert_at(self.host, tx, i, r, n.clamp(0, i64::from(u32::MAX)) as u32))
+        i64::from(self.h.insert_at(self.host, tx, i, r, n.clamp(0, i64::from(u32::MAX)) as u32).unwrap_or(0))
     }
     fn extract(&mut self, i: usize, r: &FluidResource, n: i64) -> i64 {
         let Some(tx) = self.tx else { return 0 };
-        i64::from(self.h.extract_at(self.host, tx, i, r, n.clamp(0, i64::from(u32::MAX)) as u32))
+        i64::from(self.h.extract_at(self.host, tx, i, r, n.clamp(0, i64::from(u32::MAX)) as u32).unwrap_or(0))
     }
     fn can_extract(&mut self, i: usize, r: &FluidResource, n: i64) -> bool {
         // fixG: as for items (1 mB, then the whole amount; aborted).
         let h = self.h;
         let n = n.clamp(1, i64::from(u32::MAX)) as u32;
-        self.host.transaction(|host, tx| Err::<(), bool>(h.extract_at(host, tx, i, r, 1) > 0 || h.extract_at(host, tx, i, r, n) > 0)).unwrap_err()
+        self.host.transaction(|host, tx| Err::<(), bool>(h.extract_at(host, tx, i, r, 1).unwrap_or(0) > 0 || h.extract_at(host, tx, i, r, n).unwrap_or(0) > 0)).err().and_then(crate::aborted).unwrap_or(false)
     }
     fn key_of(&mut self, r: &FluidResource) -> AeKey {
         AeKey::fluid(&fluid_id(&*self.host, r).unwrap_or_default(), "")
@@ -1129,17 +1129,17 @@ impl ResourceHandler<ItemResource> for InterfaceItems {
             _ => self.inner.is_valid(host, index, resource),
         }
     }
-    fn insert_at(&self, host: &mut dyn ServerHost, tx: &Transaction, index: usize, resource: &ItemResource, amount: u32) -> u32 {
+    fn insert_at(&self, host: &mut dyn ServerHost, tx: &TransactionContext, index: usize, resource: &ItemResource, amount: u32) -> Result<u32, TransactionError<Overanswered>> {
         if index >= 9 || !self.is_valid(host, index, resource) {
-            return 0;
+            return Ok(0);
         }
-        self.inner.insert_at(host, tx, index, resource, amount).min(amount)
+        self.inner.insert_at(host, tx, index, resource, amount).map(|n| n.min(amount))
     }
-    fn extract_at(&self, host: &mut dyn ServerHost, tx: &Transaction, index: usize, resource: &ItemResource, amount: u32) -> u32 {
+    fn extract_at(&self, host: &mut dyn ServerHost, tx: &TransactionContext, index: usize, resource: &ItemResource, amount: u32) -> Result<u32, TransactionError<Overanswered>> {
         if index >= 9 {
-            return 0;
+            return Ok(0);
         }
-        self.inner.extract_at(host, tx, index, resource, amount).min(amount)
+        self.inner.extract_at(host, tx, index, resource, amount).map(|n| n.min(amount))
     }
 }
 
@@ -1335,10 +1335,10 @@ fn replace_held(host: &mut dyn ServerHost, player: u128, old: &ItemStack, new: I
     let Some(slot) = host.player(player).and_then(|p| p.selected_slot(&*host)) else { return };
     let place = ItemPlace::PlayerSlot { player, slot: slot as i32 };
     let _ = host.transaction(|host, tx| {
-        if place.extract(host, tx, &ItemResource::of(old), old.count()) != old.count() {
+        if place.extract(host, tx, &ItemResource::of(old), old.count()).unwrap_or(0) != old.count() {
             return Err(());
         }
-        if place.insert(host, tx, &ItemResource::of(&new), new.count()) != new.count() {
+        if place.insert(host, tx, &ItemResource::of(&new), new.count()).unwrap_or(0) != new.count() {
             return Err(());
         }
         Ok(())
@@ -1549,11 +1549,11 @@ impl<R: 'static> ResourceHandler<R> for TunnelEnd<R> {
     fn is_valid(&self, _host: &mut dyn ServerHost, _index: usize, _resource: &R) -> bool {
         true
     }
-    fn insert_at(&self, host: &mut dyn ServerHost, tx: &Transaction, index: usize, resource: &R, amount: u32) -> u32 {
+    fn insert_at(&self, host: &mut dyn ServerHost, tx: &TransactionContext, index: usize, resource: &R, amount: u32) -> Result<u32, TransactionError<Overanswered>> {
         if self.output {
-            return routing(|| self.source(host).map_or(0, |s| s.insert_at(host, tx, index, resource, amount).min(amount)));
+            return Ok(routing(|| self.source(host).map_or(0, |s| s.insert_at(host, tx, index, resource, amount).unwrap_or(0).min(amount))));
         }
-        routing(|| {
+        Ok(routing(|| {
             let ends = self.ends(host);
             if ends.is_empty() {
                 return 0;
@@ -1570,13 +1570,13 @@ impl<R: 'static> ResourceHandler<R> for TunnelEnd<R> {
                 }
             }
             went
-        })
+        }))
     }
-    fn insert(&self, host: &mut dyn ServerHost, tx: &Transaction, resource: &R, amount: u32) -> Result<u32, Overanswered> {
-        Ok(self.insert_at(host, tx, 0, resource, amount))
+    fn insert(&self, host: &mut dyn ServerHost, tx: &TransactionContext, resource: &R, amount: u32) -> Result<u32, TransactionError<Overanswered>> {
+        self.insert_at(host, tx, 0, resource, amount)
     }
-    fn extract_at(&self, host: &mut dyn ServerHost, tx: &Transaction, index: usize, resource: &R, amount: u32) -> u32 {
-        routing(|| self.source(host).map_or(0, |s| s.extract_at(host, tx, index, resource, amount).min(amount)))
+    fn extract_at(&self, host: &mut dyn ServerHost, tx: &TransactionContext, index: usize, resource: &R, amount: u32) -> Result<u32, TransactionError<Overanswered>> {
+        Ok(routing(|| self.source(host).map_or(0, |s| s.extract_at(host, tx, index, resource, amount).unwrap_or(0).min(amount))))
     }
 }
 
@@ -1635,11 +1635,11 @@ impl EnergyHandler for TunnelEnergy {
     fn capacity(&self, host: &mut dyn ServerHost) -> u32 {
         routing(|| self.ends(host).iter().map(|e| e.capacity(host)).fold(0u32, u32::saturating_add))
     }
-    fn insert(&self, host: &mut dyn ServerHost, tx: &Transaction, amount: u32) -> u32 {
+    fn insert(&self, host: &mut dyn ServerHost, tx: &TransactionContext, amount: u32) -> Result<u32, TransactionError<Overanswered>> {
         if self.output {
-            return 0;
+            return Ok(0);
         }
-        routing(|| {
+        Ok(routing(|| {
             let ends = self.ends(host);
             if ends.is_empty() {
                 return 0;
@@ -1652,17 +1652,17 @@ impl EnergyHandler for TunnelEnergy {
                         break;
                     }
                     let give = round.min(amount - went);
-                    went += e.insert(host, tx, give).min(give);
+                    went += e.insert(host, tx, give).unwrap_or(0).min(give);
                 }
             }
             went
-        })
+        }))
     }
-    fn extract(&self, host: &mut dyn ServerHost, tx: &Transaction, amount: u32) -> u32 {
+    fn extract(&self, host: &mut dyn ServerHost, tx: &TransactionContext, amount: u32) -> Result<u32, TransactionError<Overanswered>> {
         if !self.output {
-            return 0;
+            return Ok(0);
         }
-        routing(|| self.ends(host).first().map_or(0, |e| e.extract(host, tx, amount).min(amount)))
+        Ok(routing(|| self.ends(host).first().map_or(0, |e| e.extract(host, tx, amount).unwrap_or(0).min(amount))))
     }
 }
 

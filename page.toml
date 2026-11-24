@@ -1,0 +1,41 @@
+name = "Applied Energistics 2 (Early Access)"
+summary = "Early Access: store items and fluids as energy on an ME network, and let it craft for you."
+description = """
+**Early Access.** Everything listed here works and is tested, but this is a large mod on a young modding API. Expect rough edges, and please report what you find on the [issue tracker](https://github.com/Joeypc6/AE2-Sunrise/issues).
+
+Store your items and fluids as energy in an ME network: drives and cells hold them, terminals show all of them in one place, and autocrafting makes what you ask for.
+
+A port of [Applied Energistics 2](https://github.com/AppliedEnergistics/Applied-Energistics-2) by TeamAppliedEnergistics to [Sunrise](https://playsunrise.net) (Minecraft Java 26.3). One native mod on Sunrise's mod API; the code is a rewrite under AE2's licence (LGPL-3.0), and AE2's textures, models, sounds and guide are included under theirs (CC BY-NC-SA 3.0). See `LICENSE` and `NOTICE`.
+
+What it does:
+
+- **ME network:** controllers, cables of every kind and colour, channels, energy acceptors and cells, and the network tool.
+- **Storage:** ME drives and chests, item and fluid cells of every size, portable cells, partitioning and fuzzy cards, the IO port, storage, import and export buses, and level emitters.
+- **Terminals:** the ME, crafting, pattern encoding and pattern access terminals, wireless terminals and the wireless access point.
+- **Autocrafting:** crafting CPUs, crafting, processing and smithing patterns, pattern providers, molecular assemblers, and a crafting status screen with an estimate of the time left.
+- **The cable bus:** parts and facades share one cable block, each with its own hit box and menu.
+- **P2P tunnels**, **spatial storage** and the **quantum network bridge**.
+- **World:** meteorites, certus quartz growth, in-world crafting, the charger, the inscriber, the entropy manipulator, the matter cannon, and the Fluix Researcher villager.
+- AE2's config files, with its own keys and defaults.
+- Optional: JEI (AE2's recipe categories and the terminals' "+" transfer), Jade (network and part details), and the `guideme` library for AE2's W guide.
+"""
+authors = ["Sunrise port: Joeypc6", "TeamAppliedEnergistics"]
+homepage = "https://github.com/Joeypc6/AE2-Sunrise"
+issues = "https://github.com/Joeypc6/AE2-Sunrise/issues"
+categories = ["technology", "storage"]
+
+[[screenshots]]
+path = "page/1-network.jpg"
+caption = "An ME network: controller, drives, crafting CPU, assemblers and terminals."
+
+[[screenshots]]
+path = "page/2-terminal.jpg"
+caption = "The ME terminal with stored and craftable items."
+
+[[screenshots]]
+path = "page/3-plan.jpg"
+caption = "A crafting plan."
+
+[[screenshots]]
+path = "page/4-meteorite.jpg"
+caption = "A meteorite crater with its sky stone core."
